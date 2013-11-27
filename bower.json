@@ -4,7 +4,6 @@
   "dependencies": {
     "sass-bootstrap": "~3.0.0",
     "modernizr": "~2.6.2",
-    "jquery": "~1.10.2",
     "metaquery": "~1.1.1"
   },
   "devDependencies": {}

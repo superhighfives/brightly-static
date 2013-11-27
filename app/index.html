@@ -23,6 +23,21 @@
     <meta name="breakpoint" content="sm" media="(min-width: 768px) and (max-width: 991px)">
     <meta name="breakpoint" content="md" media="(min-width: 992px) and (max-width: 1199px)">
     <meta name="breakpoint" content="lg" media="(min-width: 1200px)">
+
+    <script type="text/javascript">
+      WebFontConfig = {
+        google: { families: [ 'Source+Sans+Pro:300,400,600:latin' ] }
+      };
+      (function() {
+        var wf = document.createElement('script');
+        wf.src = ('https:' == document.location.protocol ? 'https' : 'http') +
+          '://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js';
+        wf.type = 'text/javascript';
+        wf.async = 'true';
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(wf, s);
+      })();
+    </script>
   </head>
   <body>
   <!--[if lt IE 10]>
@@ -53,8 +68,23 @@
   <div class="hero">
     <div class="container">
       <div class="row">
-        <div class="col-md-12">
-          
+        <div class="col-md-10 col-md-offset-2">
+          <div class="line">
+            <ul class="hero-gig">
+              <li class="hero-gig-title">
+                <span class="icon line-icon">&#xE6D0;</span>
+                The Toff In Town
+              </li>
+              <li class="hero-gig-address">
+                <span class="icon line-icon">&#xE672;</span>
+                99 Smith Street, Fitzroy
+              </li>
+              <li class="hero-gig-time">
+                <span class="icon line-icon">&#x23F2;</span>
+                Sunday, March 15th
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
     </div>
@@ -63,7 +93,6 @@
   <!-- build:js scripts/vendor.js -->
   <!-- bower:js -->
     <script src="bower_components/metaquery/metaquery.js"></script>
-    <script src="bower_components/jquery/jquery.js"></script>
   <!-- endbower -->
   <!-- endbuild -->
 
@@ -79,21 +108,6 @@
 
   <!-- build:js(.tmp) scripts/main.js -->
     <script src="scripts/main.js"></script>
-  <!-- endbuild -->
-
-  <!-- build:js scripts/plugins.js -->
-    <script src="bower_components/sass-bootstrap/js/affix.js"></script>
-    <script src="bower_components/sass-bootstrap/js/alert.js"></script>
-    <script src="bower_components/sass-bootstrap/js/dropdown.js"></script>
-    <script src="bower_components/sass-bootstrap/js/tooltip.js"></script>
-    <script src="bower_components/sass-bootstrap/js/modal.js"></script>
-    <script src="bower_components/sass-bootstrap/js/transition.js"></script>
-    <script src="bower_components/sass-bootstrap/js/button.js"></script>
-    <script src="bower_components/sass-bootstrap/js/popover.js"></script>
-    <script src="bower_components/sass-bootstrap/js/carousel.js"></script>
-    <script src="bower_components/sass-bootstrap/js/scrollspy.js"></script>
-    <script src="bower_components/sass-bootstrap/js/collapse.js"></script>
-    <script src="bower_components/sass-bootstrap/js/tab.js"></script>
   <!-- endbuild -->
 </body>
 </html>

@@ -13,10 +13,6 @@
   &:hover
     background: $color-white
 
-.hero
-  background: $color-black url(../images/hero-background.jpg) no-repeat bottom center
-  min-height: 600px
-
 .social-links
   float: right
   list-style: none
@@ -30,3 +26,31 @@
       &:hover
         text-decoration: none
         color: $color-white
+
+.line
+  border-left: 1px solid rgba($color-white, 0.3)
+  padding-left: 30px
+  position: relative
+  .line-icon
+    font-size: 14px
+    line-height: 14px
+    background: $color-black
+    padding: 6px 0 1px
+    position: absolute
+    margin-top: 2px
+    left: -0.5em
+
+.hero
+  background: $color-black url(../images/hero-background.jpg) no-repeat bottom center
+  min-height: 600px
+
+.hero-gig
+  list-style: none
+  margin: 0
+  padding: 100px 0 0
+  color: $color-white
+  .hero-gig-title
+    text-transform: uppercase
+    @extend %type-heading
+    @extend %type-40pt
+    line-height: 1em
