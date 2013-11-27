@@ -1,0 +1,67 @@
+%type-light
+  font-weight: 300
+%type-regular
+  font-weight: 400
+%type-medium
+  font-weight: 500
+%type-black
+  font-weight: 900
+%type-upcase
+  text-transform: uppercase
+
+%type-body
+  @extend %type-regular
+  font-family: $base-font-stack
+  font-size: $base-font-size
+  font-weight: normal
+
+%type-heading
+  font-family: $heading-font-stack
+  font-weight: normal
+  text-transform: uppercase
+
+%type-10pt
+  font-size: 0.625em
+%type-12pt
+  font-size: 0.750em
+%type-14pt
+  font-size: 0.875em
+%type-16pt
+  font-size: 1em
+%type-18pt
+  font-size: 1.125em
+%type-24pt
+  font-size: 1.5em
+%type-30pt
+  font-size: 1.875em
+%type-36pt
+  font-size: 2.25em
+%type-40pt
+  font-size: 2.5em
+%type-48pt
+  font-size: 3em
+%type-60pt
+  font-size: 3.75em
+%type-70pt
+  font-size: 4.4em
+%type-72pt
+  font-size: 4.5em
+
+%line-height-14pt
+  line-height: 0.875em
+%line-height-16pt
+  line-height: 1em
+%line-height-18pt
+  line-height: 1.125em
+%line-height-20pt
+  line-height: 1.25em
+%line-height-24pt
+  line-height: 1.5em
+%line-height-30pt
+  line-height: 1.875em
+%line-height-36pt
+  line-height: 2.25em
+%line-height-48pt
+  line-height: 3em
+%line-height-60pt
+  line-height: 3.75em

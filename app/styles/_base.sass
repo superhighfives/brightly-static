@@ -1,0 +1,50 @@
+body
+  background: $color-white
+  color: $base-text-color
+  @extend %type-body
+  min-width: 320px
+
+h1, h2, h3, h4, h5, h6
+  font-weight: normal
+  font-family: inherit
+  margin: 0
+  padding: 0
+  color: $base-heading-color
+  @extend %type-heading
+
+ul, ol
+  @extend %type-18pt
+  margin-bottom: 20px
+
+p
+  @extend %type-18pt
+  @extend %line-height-24pt
+  margin: 0 0 20px 0
+  &.last, &:last-child
+    margin-bottom: 0
+  &:empty
+    display: none
+
+blockquote
+  background: darken($color-light-grey, 2%)
+  border-left-color: $color-light-grey
+  color: $color-subtle-grey
+  p
+    @extend %type-regular
+
+a
+  color: $base-link-color
+  text-decoration: underline
+  &:hover
+    color: $base-link-color
+
+.nobr
+  white-space: nowrap
+
+// hide flash of unstyled text
+html
+  body
+    opacity: 1
+  &.wf-loading
+    body
+      opacity: 0
