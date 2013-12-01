@@ -1,5 +1,5 @@
 body
-  background: $color-black
+  background: $color-off-white
   color: $base-text-color
   @extend %type-body
   min-width: 320px
@@ -38,18 +38,24 @@ a
   &:hover
     color: $base-link-color
 
+.fancy
+  @extend %type-fancy
+
+.highlight
+  color: $color-yellow
+
 .nobr
   white-space: nowrap
 
-.full-height
-  height: 100%
-
 .table-display
   height: 100%
+  width: 100%
   display: table
 
 .cell-display
   display: table-cell
+  &.cell-vertical-center
+    vertical-align: middle
   &.cell-vertical-bottom
     vertical-align: bottom
 

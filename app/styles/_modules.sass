@@ -29,43 +29,73 @@
         text-decoration: none
         color: $color-white
 
-.line
-  border-left: 1px solid rgba($color-white, 0.3)
-  padding-left: 30px
-  position: relative
-  .line-icon
-    font-size: 14px
-    line-height: 14px
-    background: $color-black
-    padding: 6px 0 1px
-    position: absolute
-    margin-top: 2px
-    left: -0.5em
-
 .hero
-  padding: 10px 0
-  height: 600px
 
-  &.hero-gig
-    background: $color-black url(../images/hero-background.jpg) no-repeat bottom center
+  &.hero-greylings
+    height: 800px
+    background: $color-black url(../images/hero-greylings.jpg) bottom center fixed
+    background-size: cover
 
-  &.hero-sarah
-    background: red
+.hero-banner
+  height: 650px
+  margin: 0 auto
 
-.hero-details
-  padding: 0 0 200px
-  list-style: none
-  margin: 0
-  
-  .hero-title-primary
-    text-transform: uppercase
+  .hero-title
+    @extend %type-light
+    @extend %type-70pt
     @extend %type-heading
-    @extend %type-40pt
-    line-height: 1em
     color: $color-white
-  .hero-title-secondary
-    color: $color-yellow
+
+  .hero-subtitle
     @extend %type-14pt
-  .hero-title-tertiary
-    color: $color-subtle-grey
-    @extend %type-14pt
+    color: $color-off-grey
+    margin-bottom: 10px
+
+  .hero-quote
+    margin-top: 20px
+
+    blockquote
+      color: $color-white
+      padding: 0
+      margin: 0 0 20px
+      background: none
+      border: none
+      p
+        text-indent: -0.5em
+        @extend %type-18pt
+        @extend %line-height-24pt
+
+    .hero-quote-source
+      @extend %type-14pt
+      text-transform: uppercase
+      color: $color-off-grey
+      display: inline-block
+      border-top: 2px solid rgba($color-off-grey, 0.25)
+      text-decoration: none
+      padding-top: 5px
+      .icon
+        font-size: 0.75em
+      &:hover
+        color: $color-white
+        border-top-color: $color-white
+
+.button
+  border: 1px solid $color-white
+  color: $color-white
+  text-decoration: none
+  text-transform: uppercase
+  padding: 5px 10px
+  @extend %type-12pt
+  .icon
+    font-size: 0.75em
+  &:hover
+    color: $color-black
+    text-decoration: none
+    background: $color-white
+
+.button-actions
+  +clearfix
+
+  .button
+    float: right
+    margin-left: 10px
