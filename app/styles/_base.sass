@@ -1,5 +1,5 @@
 body
-  background: $color-white
+  background: $color-black
   color: $base-text-color
   @extend %type-body
   min-width: 320px
@@ -40,6 +40,18 @@ a
 
 .nobr
   white-space: nowrap
+
+.full-height
+  height: 100%
+
+.table-display
+  height: 100%
+  display: table
+
+.cell-display
+  display: table-cell
+  &.cell-vertical-bottom
+    vertical-align: bottom
 
 // hide flash of unstyled text
 html
