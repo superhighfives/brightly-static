@@ -39,7 +39,7 @@
       })();
     </script>
   </head>
-  <body>
+  <body ng-app="BrightlyApp" ng-controller="MainCtrl">
   <!--[if lt IE 10]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
   <![endif]-->
@@ -66,7 +66,9 @@
   </div>
 
   <section class="hero hero-greylings">
-    
+      
+    <img src="images/hero-greylings.jpg" class="background-image" ng-parallax />
+
     <div class="hero-banner">
       <div class="table-display">
         <div class="cell-display cell-vertical-center">
@@ -76,13 +78,13 @@
                 <h2 class="hero-subtitle">The New EP</h2>
                 <h1 class="hero-title">The Greylings</h1>
                 <div class="button-actions">
+                  <a href="#" class="button button-grey">
+                    <span class="icon">&#x2139;</span>
+                    Read more
+                  </a>
                   <a href="#" class="button">
                     <span class="icon">&#x266B;</span>
                     Get it now
-                  </a>
-                  <a href="#" class="button">
-                    <span class="icon">&#x2139;</span>
-                    Read more
                   </a>
                 </div>
                 <div class="hero-quote">
@@ -102,10 +104,257 @@
     </div>
 
   </section>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="blocks">
+          <div class="row">
+            <div class="col-md-3">
+              <div class="block-title">
+                <h2 class="block-title-primary">Next gig</h2>
+                <a class="block-title-secondary" href="#">View all our gigs</a>
+              </div>
+              <a href="#" class="block block-next-gig">
+                <h1 class="block-heading">Northcote Social Club</h1>
+                <div class="block-details">
+                  <ul class="block-details-list">
+                    <li class="block-details-list-item">
+                      <div class="icon">&#x23F2;</div>
+                      <div class="block-details-list-item-primary">
+                        9pm, Thursday May 9th
+                      </div>
+                    </li>
+                    <li class="block-details-list-item">
+                      <div class="icon">&#xE6D0;</div>
+                      <div class="block-details-list-item-primary">
+                        301 High St, Northcote
+                        <div class="block-details-list-item-secondary">
+                          Melbourne, Australia
+                        </div>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+              </a>
+            </div>
+            <div class="col-md-3">
+              <div class="block-title">
+                <h2 class="block-title-primary">The debut album</h2>
+              </div>
+              <a href="#" class="block">
+                <img class="block-image" src="images/blocks/tile-beginnings-and-endings.jpg" alt="The debut album, Beginnings & Endings" />
+              </a>
+            </div>
+            <div class="col-md-3">
+              <div class="block-title">
+                <h2 class="block-title-primary">The new EP</h2>
+              </div>
+              <a href="#" class="block">
+                <img class="block-image" src="images/blocks/tile-the-greylings.jpg" alt="The new EP, The Greylings" />
+              </a>
+            </div>
+            <div class="col-md-3">
+              <div class="block-title">
+                <h2 class="block-title-primary">Preflight Nerves</h2>
+              </div>
+              <a href="#" class="block block-preflight-nerves">
+                <img class="block-ribbon" src="images/blocks/tile-ribbon-fwa.png" alt="Winner, FWA site of the day award" />
+                <div class="social-icon">&#xF611;</div>
+                <h2 class="block-preflight-nerves-title">An award winning Twitter-powered music video</h2>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="posts">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4">
+          <div class="post post-tumblr">
+            <div class="post-content">
+              <div class="row">
+                <div class="col-md-6">
+                  <img src="images/blocks/tile-the-greylings.jpg" class="post-image" />
+                </div>
+                <div class="col-md-6">
+                  <p>Something</p>
+                  <ul class="post-meta">
+                    <li class="post-meta-item post-meta-service">
+                      <div class="social-icon">&#xF620;</div>
+                      <div class="post-meta-item-detail">Tumblr</div>
+                    </li>
+                    <li class="post-meta-item post-meta-date">
+                      <div class="icon">&#x23F2;</div>
+                      <div class="post-meta-item-detail"><a class="post-meta-permalink" href="#">two weeks ago</a></div>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="post post-twitter">
+            <div class="post-content">
+              <p>Nic has just released his first solo tune, Tough, as DXHeaven. Check it out: <a href="#">https://soundcloud.com/dxheaven/</a></p>
+            </div>
+            <ul class="post-meta">
+              <li class="post-meta-item post-meta-service">
+                <div class="social-icon">&#xF611;</div>
+                <div class="post-meta-item-detail">Twitter</div>
+              </li>
+              <li class="post-meta-item post-meta-date">
+                <div class="icon">&#x23F2;</div>
+                <div class="post-meta-item-detail"><a class="post-meta-permalink" href="#">three weeks ago</a></div>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="post post-youtube">
+            <div class="flex-video widescreen"><iframe src="//www.youtube.com/embed/HAQfUEf0zpY?rel=0" frameborder="0" allowfullscreen></iframe></div>
+            <ul class="post-meta">
+              <li class="post-meta-item post-meta-service">
+                <div class="social-icon">&#xF630;</div>
+                <div class="post-meta-item-detail">YouTube</div>
+              </li>
+              <li class="post-meta-item post-meta-date">
+                <div class="icon">&#x23F2;</div>
+                <div class="post-meta-item-detail"><a class="post-meta-permalink" href="#">six weeks ago</a></div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-4">
+          <div class="post post-tumblr">
+            <div class="post-content">
+              <div class="row">
+                <div class="col-md-6">
+                  <img src="images/blocks/tile-the-greylings.jpg" class="post-image" />
+                </div>
+                <div class="col-md-6">
+                  <p>Something</p>
+                  <ul class="post-meta">
+                    <li class="post-meta-item post-meta-service">
+                      <div class="social-icon">&#xF620;</div>
+                      <div class="post-meta-item-detail">Tumblr</div>
+                    </li>
+                    <li class="post-meta-item post-meta-date">
+                      <div class="icon">&#x23F2;</div>
+                      <div class="post-meta-item-detail"><a class="post-meta-permalink" href="#">two weeks ago</a></div>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="post post-twitter">
+            <div class="post-content">
+              <p>Nic has just released his first solo tune, Tough, as DXHeaven. Check it out: <a href="#">https://soundcloud.com/dxheaven/</a></p>
+            </div>
+            <ul class="post-meta">
+              <li class="post-meta-item post-meta-service">
+                <div class="social-icon">&#xF611;</div>
+                <div class="post-meta-item-detail">Twitter</div>
+              </li>
+              <li class="post-meta-item post-meta-date">
+                <div class="icon">&#x23F2;</div>
+                <div class="post-meta-item-detail"><a class="post-meta-permalink" href="#">three weeks ago</a></div>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="post post-youtube">
+            <div class="flex-video widescreen"><iframe src="//www.youtube.com/embed/HAQfUEf0zpY?rel=0" frameborder="0" allowfullscreen></iframe></div>
+            <ul class="post-meta">
+              <li class="post-meta-item post-meta-service">
+                <div class="social-icon">&#xF630;</div>
+                <div class="post-meta-item-detail">YouTube</div>
+              </li>
+              <li class="post-meta-item post-meta-date">
+                <div class="icon">&#x23F2;</div>
+                <div class="post-meta-item-detail"><a class="post-meta-permalink" href="#">six weeks ago</a></div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-4">
+          <div class="post post-tumblr">
+            <div class="post-content">
+              <div class="row">
+                <div class="col-md-6">
+                  <img src="images/blocks/tile-the-greylings.jpg" class="post-image" />
+                </div>
+                <div class="col-md-6">
+                  <p>Something</p>
+                  <ul class="post-meta">
+                    <li class="post-meta-item post-meta-service">
+                      <div class="social-icon">&#xF620;</div>
+                      <div class="post-meta-item-detail">Tumblr</div>
+                    </li>
+                    <li class="post-meta-item post-meta-date">
+                      <div class="icon">&#x23F2;</div>
+                      <div class="post-meta-item-detail"><a class="post-meta-permalink" href="#">two weeks ago</a></div>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="post post-twitter">
+            <div class="post-content">
+              <p>Nic has just released his first solo tune, Tough, as DXHeaven. Check it out: <a href="#">https://soundcloud.com/dxheaven/</a></p>
+            </div>
+            <ul class="post-meta">
+              <li class="post-meta-item post-meta-service">
+                <div class="social-icon">&#xF611;</div>
+                <div class="post-meta-item-detail">Twitter</div>
+              </li>
+              <li class="post-meta-item post-meta-date">
+                <div class="icon">&#x23F2;</div>
+                <div class="post-meta-item-detail"><a class="post-meta-permalink" href="#">three weeks ago</a></div>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="post post-youtube">
+            <div class="flex-video widescreen"><iframe src="//www.youtube.com/embed/HAQfUEf0zpY?rel=0" frameborder="0" allowfullscreen></iframe></div>
+            <ul class="post-meta">
+              <li class="post-meta-item post-meta-service">
+                <div class="social-icon">&#xF630;</div>
+                <div class="post-meta-item-detail">YouTube</div>
+              </li>
+              <li class="post-meta-item post-meta-date">
+                <div class="icon">&#x23F2;</div>
+                <div class="post-meta-item-detail"><a class="post-meta-permalink" href="#">six weeks ago</a></div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
   
   <!-- build:js scripts/vendor.js -->
   <!-- bower:js -->
     <script src="bower_components/metaquery/metaquery.js"></script>
+    <script src="bower_components/angular/angular.js"></script>
   <!-- endbower -->
   <!-- endbuild -->
 
@@ -121,6 +370,7 @@
 
   <!-- build:js(.tmp) scripts/main.js -->
     <script src="scripts/main.js"></script>
+    <script src="scripts/directives/parallax.js"></script>
   <!-- endbuild -->
 </body>
 </html>

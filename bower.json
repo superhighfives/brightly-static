@@ -4,7 +4,8 @@
   "dependencies": {
     "sass-bootstrap": "~3.0.0",
     "modernizr": "~2.6.2",
-    "metaquery": "~1.1.1"
+    "metaquery": "~1.1.1",
+    "angular": "~1.2.3"
   },
   "devDependencies": {}
 }

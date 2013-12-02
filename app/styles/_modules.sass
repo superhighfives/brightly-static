@@ -30,18 +30,25 @@
         color: $color-white
 
 .hero
+  position: relative
 
   &.hero-greylings
     height: 800px
-    background: $color-black url(../images/hero-greylings.jpg) bottom center fixed
-    background-size: cover
+    background: $color-black
+    overflow: hidden
+    
+    .background-image
+      position: absolute
+      width: 100%
+      height: 100%
+      background: url(../images/hero-greylings.jpg) bottom center fixed
+      background-size: cover
 
 .hero-banner
   height: 650px
   margin: 0 auto
 
   .hero-title
-    @extend %type-light
     @extend %type-70pt
     @extend %type-heading
     color: $color-white
@@ -67,7 +74,7 @@
 
     .hero-quote-source
       @extend %type-14pt
-      text-transform: uppercase
+      @extend %type-upcase
       color: $color-off-grey
       display: inline-block
       border-top: 2px solid rgba($color-off-grey, 0.25)
@@ -79,19 +86,179 @@
         color: $color-white
         border-top-color: $color-white
 
+.blocks
+  position: absolute
+  left: 0
+  bottom: -135px
+
+  .block-title
+    +clearfix
+    margin-bottom: 10px
+    .block-title-primary,
+    .block-title-secondary
+      @extend %type-12pt
+      @extend %type-upcase
+    .block-title-primary
+      float: left
+    .block-title-secondary
+      float: right
+      color: $color-subtle-grey
+      text-decoration: none
+      &:hover
+        color: $color-white
+        text-decoration: none
+  .block
+    transition: transform 0.3s
+    display: block
+    width: 263px
+    height: 263px
+    box-shadow: 0 0 10px rgba($color-black, 0.25)
+    position: relative
+    text-decoration: none
+    &:hover
+      transform: scale(1.01)
+
+    &.block-next-gig,
+    &.block-preflight-nerves
+      border: 1px solid $color-yellow
+
+    &.block-preflight-nerves
+      .block-preflight-nerves-title
+        width: 100%
+        height: 50%
+        top: 50%
+        left: 0
+        position: absolute
+        text-align: center
+        padding: 40px
+        text-transform: none
+        @extend %type-14pt
+        @extend %line-height-24pt
+        color: $color-subtle-grey
+
+      .social-icon
+        color: $color-yellow
+        position: absolute
+        width: 100%
+        height: 100%
+        text-align: center
+        @extend %type-72pt
+        line-height: 270px
+    
+    .block-ribbon
+      position: absolute
+      top: -2px
+      right: -2px
+
+    .block-image
+      width: 100%
+      height: 100%
+
+    .block-heading
+      @extend %type-24pt
+      @extend %type-heading
+      color: $color-heading-grey
+      background: $color-yellow
+      height: 126px
+      padding: 20px
+      display: table-cell
+      vertical-align: bottom
+
+    .block-details
+      padding: 20px
+      .block-details-list
+        list-style: none
+        margin: 0
+        padding: 0
+        .block-details-list-item
+          position: relative
+          padding-bottom: 5px
+          .icon
+            position: absolute
+            top: 2px
+            left: 0
+            font-size: 0.75em
+          .block-details-list-item-primary
+            @extend %type-14pt
+            padding-left: 25px
+          .block-details-list-item-secondary
+            @extend %type-12pt
+            @extend %type-upcase
+
+.posts
+  padding: 135px + 40px 0 40px
+
+  .post
+    border-top: 2px solid $color-off-grey
+    padding-top: 20px
+    margin-bottom: 40px
+    transition: border-top-color 0.3s
+
+    &:hover
+      border-top-color: $color-yellow
+
+    .post-content
+      color: $color-subtle-grey
+      a
+        text-decoration: none
+        border-bottom: 1px solid $color-body-grey
+
+    .post-image
+      width: 100%
+      height: auto
+      box-shadow: 0 0 5px rgba($color-black, 0.25)
+
+    &.post-tumblr
+      .post-content
+        p
+          @extend %type-14pt
+
+    .post-meta
+      list-style: none
+      margin: 20px 0 0
+      padding: 0
+      @extend %type-12pt
+      @extend %type-upcase
+      .post-meta-item
+        position: relative
+        color: $color-subtle-grey
+        padding-bottom: 5px
+        .post-meta-item-detail
+          padding-left: 20px
+        .icon,
+        .social-icon
+          position: absolute
+          top: 0
+          left: 0
+      .post-meta-permalink
+        color: $color-subtle-grey
+        text-decoration: none
+        border-bottom: 1px dashed $color-subtle-grey
+        &:hover
+          color: $color-body-grey
+          border-bottom-color: $color-body-grey
+
 .button
   border: 1px solid $color-white
   color: $color-white
   text-decoration: none
-  text-transform: uppercase
+  @extend %type-upcase
   padding: 5px 10px
   @extend %type-12pt
   .icon
     font-size: 0.75em
   &:hover
     color: $color-black
-    text-decoration: none
     background: $color-white
+    text-decoration: none
+
+  &.button-grey
+    border-color: $color-off-grey
+    color: $color-off-grey
+    &:hover
+      color: $color-subtle-grey
+      background: $color-off-grey
+
 
 .button-actions
   +clearfix
