@@ -2,18 +2,6 @@
 
 app = angular.module('BrightlyApp', [])
 
-app.config ($interpolateProvider) ->
-  $interpolateProvider.startSymbol('#{')
-  $interpolateProvider.endSymbol('}')
-
-app.controller 'MainCtrl', [
-  '$scope', '$http'
-  ($scope, $http) ->
-
-
-
-]
-
 # Cross-browser scroll amount calc from https://developer.mozilla.org/en-US/docs/Web/API/window.scrollY
 if window.pageYOffset isnt `undefined`
   app.value "viewportYOffset", ->
@@ -50,3 +38,16 @@ app.factory "onScrollChange", ($document, viewportYOffset) ->
 
   detach: (callback) ->
     callbacks.splice callbacks.indexOf(callback), 1
+
+app.controller 'MainCtrl', [
+  '$scope', '$http'
+  ($scope, $http) ->
+
+    $scope.latest_gig = []
+    $scope.latest_gig_endpoint = "http://localhost:5000/latest_gig.json?jsoncallback=JSON_CALLBACK"
+
+    $scope.feeds = []
+    $scope.feeds_endpoint = "http://localhost:5000/feeds.json?jsoncallback=JSON_CALLBACK"
+
+]
+

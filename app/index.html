@@ -78,10 +78,6 @@
                 <h2 class="hero-subtitle">The New EP</h2>
                 <h1 class="hero-title">The Greylings</h1>
                 <div class="button-actions">
-                  <a href="#" class="button button-grey">
-                    <span class="icon">&#x2139;</span>
-                    Read more
-                  </a>
                   <a href="http://music.wearebrightly.com/album/the-greylings" class="button">
                     <span class="icon">&#x266B;</span>
                     Get it now
@@ -115,28 +111,31 @@
                 <h2 class="block-title-primary">Next gig</h2>
                 <a class="block-title-secondary" href="https://www.songkick.com/artists/4201936-brightly">View all our gigs</a>
               </div>
-              <a href="#" class="block block-next-gig">
-                <h1 class="block-heading">Northcote Social Club</h1>
-                <div class="block-details">
-                  <ul class="block-details-list">
-                    <li class="block-details-list-item">
-                      <div class="icon">&#x23F2;</div>
-                      <div class="block-details-list-item-primary">
-                        9pm, Thursday May 9th
-                      </div>
-                    </li>
-                    <li class="block-details-list-item">
-                      <div class="icon">&#xE6D0;</div>
-                      <div class="block-details-list-item-primary">
-                        301 High St, Northcote
-                        <div class="block-details-list-item-secondary">
-                          Melbourne, Australia
+
+              <div ng-gigs>
+                <a ng-href="{{ latest_gig.uri }}" class="block block-next-gig ng-cloak">
+                  <div class="block-heading">
+                    <h1 class="block-heading-title ng-cloak">{{ latest_gig.venue.name }}</h1>
+                  </div>
+                  <div class="block-details">
+                    <ul class="block-details-list">
+                      <li class="block-details-list-item">
+                        <div class="icon">&#x23F2;</div>
+                        <div class="block-details-list-item-primary ng-cloak">
+                          {{ latest_gig.datetime | date: 'ha, EEEE MMMM d' }}
                         </div>
-                      </div>
-                    </li>
-                  </ul>
-                </div>
-              </a>
+                      </li>
+                      <li class="block-details-list-item">
+                        <div class="icon">&#xE6D0;</div>
+                        <div class="block-details-list-item-primary ng-cloak">
+                          {{ latest_gig.city.name }}
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+                </a>
+              </div>
+
             </div>
             <div class="col-md-3">
               <div class="block-title">
@@ -170,63 +169,17 @@
     </div>
   </div>
 
-  <div class="posts">
+  <div class="posts" ng-feeds>
     <div class="container">
+
       <div class="row">
-        <div class="col-md-4">
-          <div class="post post-tumblr">
+        <div class="col-md-4" ng-repeat="item in feeds">
+          <div class="post post-{{ item.service }}">
             <div class="post-content">
               <div class="row">
-                <div class="col-md-6">
-                  <img src="images/blocks/tile-the-greylings.jpg" class="post-image" />
-                </div>
-                <div class="col-md-6">
-                  <p>Something</p>
-                  <ul class="post-meta">
-                    <li class="post-meta-item post-meta-service">
-                      <div class="social-icon">&#xF620;</div>
-                      <div class="post-meta-item-detail">Tumblr</div>
-                    </li>
-                    <li class="post-meta-item post-meta-date">
-                      <div class="icon">&#x23F2;</div>
-                      <div class="post-meta-item-detail"><a class="post-meta-permalink" href="#">two weeks ago</a></div>
-                    </li>
-                  </ul>
-                </div>
+                <ng-include src="item.service"></ng-include>
               </div>
             </div>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="post post-twitter">
-            <div class="post-content">
-              <p>Nic has just released his first solo tune, Tough, as DXHeaven. Check it out: <a href="#">https://soundcloud.com/dxheaven/</a></p>
-            </div>
-            <ul class="post-meta">
-              <li class="post-meta-item post-meta-service">
-                <div class="social-icon">&#xF611;</div>
-                <div class="post-meta-item-detail">Twitter</div>
-              </li>
-              <li class="post-meta-item post-meta-date">
-                <div class="icon">&#x23F2;</div>
-                <div class="post-meta-item-detail"><a class="post-meta-permalink" href="#">three weeks ago</a></div>
-              </li>
-            </ul>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="post post-youtube">
-            <div class="flex-video widescreen"><iframe src="//www.youtube.com/embed/HAQfUEf0zpY?rel=0" frameborder="0" allowfullscreen></iframe></div>
-            <ul class="post-meta">
-              <li class="post-meta-item post-meta-service">
-                <div class="social-icon">&#xF630;</div>
-                <div class="post-meta-item-detail">YouTube</div>
-              </li>
-              <li class="post-meta-item post-meta-date">
-                <div class="icon">&#x23F2;</div>
-                <div class="post-meta-item-detail"><a class="post-meta-permalink" href="#">six weeks ago</a></div>
-              </li>
-            </ul>
           </div>
         </div>
       </div>
@@ -290,67 +243,41 @@
         </div>
       </div>
 
-      <div class="row">
-        <div class="col-md-4">
-          <div class="post post-tumblr">
-            <div class="post-content">
-              <div class="row">
-                <div class="col-md-6">
-                  <img src="images/blocks/tile-the-greylings.jpg" class="post-image" />
-                </div>
-                <div class="col-md-6">
-                  <p>Something</p>
-                  <ul class="post-meta">
-                    <li class="post-meta-item post-meta-service">
-                      <div class="social-icon">&#xF620;</div>
-                      <div class="post-meta-item-detail">Tumblr</div>
-                    </li>
-                    <li class="post-meta-item post-meta-date">
-                      <div class="icon">&#x23F2;</div>
-                      <div class="post-meta-item-detail"><a class="post-meta-permalink" href="#">two weeks ago</a></div>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="post post-twitter">
-            <div class="post-content">
-              <p>Nic has just released his first solo tune, Tough, as DXHeaven. Check it out: <a href="#">https://soundcloud.com/dxheaven/</a></p>
-            </div>
-            <ul class="post-meta">
-              <li class="post-meta-item post-meta-service">
-                <div class="social-icon">&#xF611;</div>
-                <div class="post-meta-item-detail">Twitter</div>
-              </li>
-              <li class="post-meta-item post-meta-date">
-                <div class="icon">&#x23F2;</div>
-                <div class="post-meta-item-detail"><a class="post-meta-permalink" href="#">three weeks ago</a></div>
-              </li>
-            </ul>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="post post-youtube">
-            <div class="flex-video widescreen"><iframe src="//www.youtube.com/embed/HAQfUEf0zpY?rel=0" frameborder="0" allowfullscreen></iframe></div>
-            <ul class="post-meta">
-              <li class="post-meta-item post-meta-service">
-                <div class="social-icon">&#xF630;</div>
-                <div class="post-meta-item-detail">YouTube</div>
-              </li>
-              <li class="post-meta-item post-meta-date">
-                <div class="icon">&#x23F2;</div>
-                <div class="post-meta-item-detail"><a class="post-meta-permalink" href="#">six weeks ago</a></div>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
     </div>
   </div>
-  
+
+  <script type="text/ng-template" id="twitter">
+      <div class="col-md-12">
+        <div class="twitter-text" ng-bind-html="item.text | unsafe"></div>
+        <ng-include src="'meta'"></ng-include>
+      </div>
+    </div>
+  </script>
+
+  <script type="text/ng-template" id="tumblr">
+    <div class="col-md-6">
+      <img src="images/blocks/tile-the-greylings.jpg" class="post-image" />
+    </div>
+    <div class="col-md-6">
+      <p>Something</p>
+      <ng-include src="'meta'"></ng-include>
+    </div>
+
+  </script>
+
+  <script type="text/ng-template" id="meta">
+    <ul class="post-meta">
+      <li class="post-meta-item post-meta-service">
+        <div class="social-icon">&#xF620;</div>
+        <div class="post-meta-item-detail">{{ item.service }}</div>
+      </li>
+      <li class="post-meta-item post-meta-date">
+        <div class="icon">&#x23F2;</div>
+        <div class="post-meta-item-detail"><a class="post-meta-permalink" href="#">two weeks ago</a></div>
+      </li>
+    </ul>
+  </script>
+
   <!-- build:js scripts/vendor.js -->
   <!-- bower:js -->
     <script src="bower_components/metaquery/metaquery.js"></script>
@@ -370,7 +297,10 @@
 
   <!-- build:js(.tmp) scripts/main.js -->
     <script src="scripts/main.js"></script>
+    <script src="scripts/filters/unsafe.js"></script>
     <script src="scripts/directives/parallax.js"></script>
+    <script src="scripts/directives/gigs.js"></script>
+    <script src="scripts/directives/feeds.js"></script>
   <!-- endbuild -->
 </body>
 </html>
