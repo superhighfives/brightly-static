@@ -1,6 +1,6 @@
 "use strict"
 
-app = angular.module('BrightlyApp', [])
+app = angular.module('BrightlyApp', ['angularMoment'])
 
 # Cross-browser scroll amount calc from https://developer.mozilla.org/en-US/docs/Web/API/window.scrollY
 if window.pageYOffset isnt `undefined`
