@@ -255,74 +255,59 @@
   </script>
 
   <script type="text/ng-template" id="tumblr">
-    {{ item.type }}
-    <ng-include src="item.type"></ng-include>
-    <ng-include src="'tumblr-tags'"></ng-include>
-    <ng-include src="'meta'"></ng-include>
+    <div class="col-md-12">
+      <ng-include src="item.type"></ng-include>
+      <ng-include src="'tags'"></ng-include>
+      <ng-include src="'meta'"></ng-include>
+    </div>
   </script>
   
   <script type="text/ng-template" id="post-video">
-    <div class="col-md-12">
-      <div ng-bind-html="item.related.embed | unsafe"></div>
-      <div ng-bind-html="item.related.caption | unsafe"></div>
-    </div>
+    <div ng-bind-html="item.related.embed | unsafe"></div>
+    <div ng-bind-html="item.related.caption | unsafe"></div>
   </script>
 
   <script type="text/ng-template" id="post-audio">
-    <div class="col-md-12">
-      <div ng-bind-html="item.related.embed | unsafe"></div>
-      <div ng-bind-html="item.related.caption | unsafe"></div>
-    </div>
+    <div ng-bind-html="item.related.embed | unsafe"></div>
+    <div ng-bind-html="item.related.caption | unsafe"></div>
   </script>
 
   <script type="text/ng-template" id="post-chat">
-    <div class="col-md-12">
-      <p ng-bind-html="item.related.body | unsafe"></p>
-    </div>
+    <p ng-bind-html="item.related.body | unsafe"></p>
   </script>
 
   <script type="text/ng-template" id="post-link">
-    <div class="col-md-12">
-      <a ng-href='{{ item.related.url }}' class="tumblr-title">{{ item.related.title }}</a>
-      <div ng-bind-html="item.related.description | unsafe"></div>
-    </div>
+    <a ng-href='{{ item.related.url }}' class="tumblr-title">{{ item.related.title }}</a>
+    <div ng-bind-html="item.related.description | unsafe"></div>
   </script>
   
   <script type="text/ng-template" id="post-quote">
-    <div class="col-md-12">
-      <blockquote class="tumblr-quote">
-        <p ng-bind-html="item.related.text | unsafe"></p>
-        <p class="tumblr-source">{{ item.related.source }}</p>
-      </blockquote>
-    </div>
+    <blockquote class="tumblr-quote">
+      <p ng-bind-html="item.related.text | unsafe"></p>
+      <p class="tumblr-source">{{ item.related.source }}</p>
+    </blockquote>
   </script>
 
   <script type="text/ng-template" id="post-photo">
-    <div class="col-md-12">
-      <div ng-repeat="photo in item.related.photos">
-        <img ng-embed="{{ photo.url }}" ng-src="{{ embed_url }}" />
-      </div>
+    <div ng-repeat="photo in item.related.photos">
+      <img ng-embed="{{ photo.url }}" ng-src="{{ embed_url }}" />
     </div>
   </script>
 
   <script type="text/ng-template" id="post-text">
-    <div class="col-md-12">
-      <h2 class="tumblr-title">{{ item.related.title }}</h2>
-      <div ng-bind-html="item.related.body | unsafe"></div>
-    </div>
+    <h2 class="tumblr-title">{{ item.related.title }}</h2>
+    <div ng-bind-html="item.related.body | unsafe"></div>
   </script>
 
-  <script type="text/ng-template" id="tumblr-tags">
-    <div class="col-md-12">
-      <div ng-repeat="tag in tags">
-        {{ tag }}
-      </div>
+  <script type="text/ng-template" id="tags">
+    <div ng-repeat="tag in tags">
+      {{ tag }}
     </div>
   </script>
 
   <script type="text/ng-template" id="soundcloud">
     <div class="col-md-12">
-      <iframe width="100%" height="166" scrolling="no" frameborder="no" ng-embed="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/{{ item.id }}&amp;color=f8cd0d&amp;auto_play=false&amp;show_artwork=false" ng-src="{{ embed_url }}"></iframe>
+      <iframe scrolling="no" frameborder="no" ng-embed="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/{{ item.id }}&amp;color=f8cd0d&amp;auto_play=false&amp;show_artwork=false" ng-src="{{ embed_url }}"></iframe>
       <ng-include src="'meta'"></ng-include>
     </div>
   </script>
@@ -343,7 +328,11 @@
       </li>
       <li class="post-meta-item post-meta-date">
         <div class="icon">&#x23F2;</div>
-        <div class="post-meta-item-detail"><a class="post-meta-permalink" ng-href="{{ item.uri }}"><time am-time-ago="item.created_at">{{ item.created_at }}</time></a></div>
+        <div class="post-meta-item-detail">
+          <a class="post-meta-permalink" ng-href="{{ item.uri }}">
+            <time am-time-ago="item.created_at">{{ item.created_at }}</time>
+          </a>
+        </div>
       </li>
     </ul>
   </script>
