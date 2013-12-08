@@ -192,21 +192,44 @@
 
 .posts
   padding: 135px + 40px 0 40px
+  
+  .breakpoint-lg &,
+  .breakpoint-md &
+    .col-md-6
+      &:nth-child(2n+1)
+        clear: both
+    .col-md-4
+      &:nth-child(3n+1)
+        clear: both
+  .breakpoint-sm &
+    .col-sm-6
+      &:nth-child(2n+1)
+        clear: both
+    .col-sm-4
+      &:nth-child(3n+1)
+        clear: both
 
   .post
     border-top: 2px solid $color-off-grey
-    padding-top: 20px
+    padding-top: 40px
     margin-bottom: 40px
     transition: border-top-color 0.3s
 
     &:hover
       border-top-color: $color-yellow
 
+
     .post-content
       color: $color-subtle-grey
       a
         text-decoration: none
         border-bottom: 1px solid $color-body-grey
+      .post-title
+        margin-bottom: 20px
+        color: $color-heading-grey
+        a
+          color: $color-yellow
+          border-bottom-color: $color-yellow
 
     img
       width: 100%
@@ -215,13 +238,15 @@
       margin-bottom: 20px
 
     &.post-tumblr
-      .post-content
-        p
-          @extend %type-14pt
-      .soundcloud_audio_player
-        width: 100%
-        height: 400px
-        margin-bottom: 20px
+      .post-text
+        img, p
+          &:last-child
+            margin-bottom: 0
+
+    .soundcloud_audio_player
+      width: 100%
+      height: 166px
+      margin-bottom: 20px
 
     .post-meta
       list-style: none
