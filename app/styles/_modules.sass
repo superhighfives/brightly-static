@@ -214,10 +214,10 @@
     padding-top: 40px
     margin-bottom: 40px
     transition: border-top-color 0.3s
+    word-break: break-all
 
     &:hover
       border-top-color: $color-yellow
-
 
     .post-content
       color: $color-subtle-grey
@@ -230,6 +230,9 @@
         a
           color: $color-yellow
           border-bottom-color: $color-yellow
+
+    ul,ol
+      @extend %type-18pt
 
     img
       width: 100%

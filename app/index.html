@@ -271,7 +271,7 @@
   <script type="text/ng-template" id="meta">
     <ul class="post-meta">
       <li class="post-meta-item post-meta-service">
-        <div class="social-icon">&#xF620;</div>
+        <div class="social-icon" ng-bind-html="item.icon | unsafe"></div>
         <div class="post-meta-item-detail">{{ item.service }}</div>
       </li>
       <li class="post-meta-item post-meta-date">

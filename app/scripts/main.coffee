@@ -49,5 +49,12 @@ app.controller 'MainCtrl', [
     $scope.feeds = []
     $scope.feeds_endpoint = "http://localhost:5000/feeds.json?jsoncallback=JSON_CALLBACK"
 
+    $scope.getIcon = (type) ->
+      switch type
+        when "instagram" then "&#xF641;"
+        when "twitter" then "&#xF611;"
+        when "tumblr" then "&#xF620;"
+        when "soundcloud" then "&#xF6B3;"
+
 ]
 
