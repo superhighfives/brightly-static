@@ -112,7 +112,7 @@
                 <a class="block-title-secondary" href="https://www.songkick.com/artists/4201936-brightly">View all our gigs</a>
               </div>
 
-              <div ng-gigs>
+              <div ng-latest-gig>
                 <a ng-href="{{ latest_gig.uri }}" class="block block-next-gig ng-cloak">
                   <div class="block-heading">
                     <h1 class="block-heading-title ng-cloak">{{ latest_gig.venue.name }}</h1>
@@ -310,7 +310,7 @@
     <script src="scripts/main.js"></script>
     <script src="scripts/filters/unsafe.js"></script>
     <script src="scripts/directives/parallax.js"></script>
-    <script src="scripts/directives/gigs.js"></script>
+    <script src="scripts/directives/latest_gig.js"></script>
     <script src="scripts/directives/feeds.js"></script>
     <script src="scripts/directives/embed.js"></script>
   <!-- endbuild -->
