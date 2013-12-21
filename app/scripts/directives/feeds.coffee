@@ -8,12 +8,3 @@ angular.module('BrightlyApp').directive 'ngFeeds', ($http) ->
         icon = scope.getIcon(post.service)
         post.icon = icon
       scope.feeds = posts
-
-      setTimeout (->
-        container = document.querySelector(".posts-wrapper")
-        msnry = new Masonry(container,
-          columnWidth: ".post-wrapper",
-          itemSelector: ".post-wrapper",
-          transitionDuration: 0
-        )
-      ), 5000

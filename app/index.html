@@ -74,7 +74,7 @@
         <div class="cell-display cell-vertical-center">
           <div class="container">
             <div class="row">
-              <div class="col-md-6 col-md-push-3 col-md-pull-3">
+              <div class="col-md-6 col-md-push-3 col-md-pull-3 col-sm-8 col-sm-push-2 col-sm-pull-2">
                 <h2 class="hero-subtitle">The New EP</h2>
                 <h1 class="hero-title">The Greylings</h1>
                 <div class="button-actions">
@@ -101,15 +101,15 @@
 
   </section>
 
-  <div class="container">
+  <div class="container blocks-wrapper">
     <div class="row">
       <div class="col-md-12">
         <div class="blocks">
           <div class="row">
-            <div class="col-md-3">
+            <div class="block-wrapper col-md-3 col-sm-3">
               <div class="block-title">
                 <h2 class="block-title-primary">Next gig</h2>
-                <a class="block-title-secondary" href="https://www.songkick.com/artists/4201936-brightly">View all our gigs</a>
+                <a class="block-title-secondary" href="https://www.songkick.com/artists/4201936-brightly">View all gigs</a>
               </div>
 
               <div ng-latest-gig>
@@ -137,7 +137,7 @@
               </div>
 
             </div>
-            <div class="col-md-3">
+            <div class="block-wrapper col-md-3 col-sm-3">
               <div class="block-title">
                 <h2 class="block-title-primary">The debut album</h2>
               </div>
@@ -145,7 +145,7 @@
                 <img class="block-image" src="images/blocks/tile-beginnings-and-endings.jpg" alt="The debut album, Beginnings & Endings" />
               </a>
             </div>
-            <div class="col-md-3">
+            <div class="block-wrapper col-md-3 col-sm-3">
               <div class="block-title">
                 <h2 class="block-title-primary">The new EP</h2>
               </div>
@@ -153,13 +153,15 @@
                 <img class="block-image" src="images/blocks/tile-the-greylings.jpg" alt="The new EP, The Greylings" />
               </a>
             </div>
-            <div class="col-md-3">
+            <div class="block-wrapper col-md-3 col-sm-3">
               <div class="block-title">
                 <h2 class="block-title-primary">Preflight Nerves</h2>
               </div>
               <a href="http://tweetflight.wearebrightly.com/" class="block block-preflight-nerves">
                 <img class="block-ribbon" src="images/blocks/tile-ribbon-fwa.png" alt="Winner, FWA site of the day award" />
-                <div class="social-icon">&#xF611;</div>
+                <div class="table-display">
+                  <div class="social-icon">&#xF611;</div>
+                </div>
                 <h2 class="block-preflight-nerves-title">An award winning Twitter-powered music video</h2>
               </a>
             </div>
@@ -173,7 +175,7 @@
     <div class="container">
 
       <div class="posts-wrapper row">
-        <div class="post-wrapper col-md-4" ng-repeat="item in feeds">
+        <div class="post-wrapper col-md-4 col-sm-4" ng-repeat="item in feeds">
           <div class="post post-{{ item.service }}">
             <div class="post-content">
               <div class="row">
@@ -287,7 +289,6 @@
 
   <!-- build:js scripts/vendor.js -->
   <!-- bower:js -->
-  <script src="bower_components/masonry/masonry.pkgd.min.js"></script>
     <script src="bower_components/metaquery/metaquery.js"></script>
     <script src="bower_components/angular/angular.js"></script>
     <script src="bower_components/moment/moment.js"></script>

@@ -14,6 +14,8 @@
     color: $color-black
   &:hover
     background: $color-white
+  .breakpoint-xs &
+    @extend %type-18pt
 
 .social-links
   float: right
@@ -28,6 +30,8 @@
       &:hover
         text-decoration: none
         color: $color-white
+  .breakpoint-xs &
+    margin-top: 5px
 
 .hero
   position: relative
@@ -36,22 +40,33 @@
     height: 800px
     background: $color-black
     overflow: hidden
+
+    .breakpoint-xs &
+      height: auto
     
     .background-image
       position: absolute
       width: 100%
-      height: 100%
-      background: url(../images/hero-greylings.jpg) bottom center fixed
-      background-size: cover
+      height: auto
 
 .hero-banner
   height: 650px
   margin: 0 auto
 
+  .breakpoint-xs &
+    height: auto
+    padding: 100px 0
+
   .hero-title
     @extend %type-70pt
     @extend %type-heading
     color: $color-white
+    .breakpoint-md &
+      @extend %type-58pt
+    .breakpoint-sm &
+      @extend %type-60pt
+    .breakpoint-xs &
+      @extend %type-36pt
 
   .hero-subtitle
     @extend %type-14pt
@@ -86,10 +101,26 @@
         color: $color-white
         border-top-color: $color-white
 
+.blocks-wrapper
+  .breakpoint-xs &
+    background: $color-black
+
 .blocks
-  position: absolute
-  left: 15px
-  bottom: -135px
+  .breakpoint-lg &,
+  .breakpoint-md &,
+  .breakpoint-sm &
+    position: absolute
+    left: 15px
+  .breakpoint-lg &
+    bottom: -132px
+  .breakpoint-md &
+    bottom: -108px
+  .breakpoint-sm &
+    bottom: -80px
+  .breakpoint-xs &
+    width: 100%
+    .block-wrapper
+      margin-bottom: 40px
 
   .block-title
     +clearfix
@@ -107,16 +138,25 @@
       &:hover
         color: $color-white
         text-decoration: none
+  
   .block
     transition: transform 0.3s
     display: block
-    width: 263px
-    height: 263px
     box-shadow: 0 0 10px rgba($color-black, 0.25)
     position: relative
     text-decoration: none
     &:hover
       transform: scale(1.01)
+
+    .breakpoint-lg &
+      width: 263px
+      height: 263px
+    .breakpoint-md &
+      width: 216px
+      height: 216px
+    .breakpoint-sm &
+      width: 161px
+      height: 161px
 
     &.block-next-gig,
     &.block-preflight-nerves
@@ -135,15 +175,39 @@
         @extend %type-14pt
         @extend %line-height-24pt
         color: $color-subtle-grey
+        .breakpoint-md &,
+          padding-left: 10px
+          padding-right: 10px
+        .breakpoint-sm &
+          padding: 10px 10px 0
+        .breakpoint-sm &
+          position: static
+          text-align: left
+
+      .table-display
+        .breakpoint-sm &
+          display: block
+          width: auto
+          height: auto
 
       .social-icon
+        display: table-cell
         color: $color-yellow
-        position: absolute
         width: 100%
         height: 100%
         text-align: center
         @extend %type-72pt
-        line-height: 270px
+        vertical-align: middle
+        padding-top: 0.25em
+        .breakpoint-sm &
+          display: block
+          @extend %type-48pt
+          text-align: left
+          padding-left: 20px
+
+      .breakpoint-xs &
+        background: $color-white
+        padding: 20px
     
     .block-ribbon
       position: absolute
@@ -158,7 +222,7 @@
       display: table
       background: $color-yellow
       width: 100%
-      height: 126px
+      height: 50%
       padding: 20px
       .block-heading-title
         width: 100%
@@ -171,6 +235,7 @@
 
     .block-details
       padding: 20px
+      background: $color-white
       .block-details-list
         list-style: none
         margin: 0
@@ -191,8 +256,16 @@
             @extend %type-upcase
 
 .posts
-  padding: 135px + 40px 0 40px
+  padding-bottom: 40px
   
+  .breakpoint-lg &
+    padding-top: 135px + 40px
+  .breakpoint-md &
+    padding-top: 110px + 40px
+  .breakpoint-sm &
+    padding-top: 80px + 40px
+
+
   .breakpoint-lg &,
   .breakpoint-md &
     .col-md-6
@@ -306,3 +379,7 @@
   .button
     float: right
     margin-left: 10px
+
+    .breakpoint-xs &
+      float: none
+      margin-left: 0
