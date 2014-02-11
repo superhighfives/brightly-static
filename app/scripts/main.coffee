@@ -43,12 +43,6 @@ app.controller 'MainCtrl', [
   '$scope', '$http'
   ($scope, $http) ->
 
-    $scope.latest_gig = []
-    $scope.latest_gig_endpoint = "http://localhost:5000/latest_gig.json?jsoncallback=JSON_CALLBACK"
-
-    $scope.feeds = []
-    $scope.feeds_endpoint = "http://localhost:5000/feeds.json?jsoncallback=JSON_CALLBACK"
-
     $scope.getIcon = (type) ->
       switch type
         when "instagram" then "&#xF641;"
@@ -56,5 +50,9 @@ app.controller 'MainCtrl', [
         when "tumblr" then "&#xF620;"
         when "soundcloud" then "&#xF6B3;"
 
-]
+    $scope.latest_gig = []
+    $scope.latest_gig_endpoint = "http://localhost:5000/latest_gig.json?jsoncallback=JSON_CALLBACK"
 
+    $scope.feeds = []
+    $scope.feeds_endpoint = "http://localhost:5000/feeds.json?jsoncallback=JSON_CALLBACK"
+]

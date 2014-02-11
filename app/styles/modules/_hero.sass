@@ -1,0 +1,67 @@
+.hero
+  position: relative
+
+  &.hero-greylings
+    height: 600px
+    background: $color-black
+    overflow: hidden
+
+    .breakpoint-xs &
+      height: auto
+    
+    .background-image
+      position: absolute
+      width: 100%
+      height: auto
+
+.hero-banner
+  height: 600px
+  margin: 0 auto
+
+  .breakpoint-xs &
+    height: auto
+    padding: 100px 0
+
+  .hero-title
+    @extend %type-70pt
+    @extend %type-heading
+    color: $color-white
+    .breakpoint-md &
+      @extend %type-58pt
+    .breakpoint-sm &
+      @extend %type-60pt
+    .breakpoint-xs &
+      @extend %type-36pt
+
+  .hero-subtitle
+    @extend %type-14pt
+    color: $color-off-grey
+    margin-bottom: 10px
+
+  .hero-quote
+    margin-top: 20px
+
+    blockquote
+      color: $color-white
+      padding: 0
+      margin: 0 0 20px
+      background: none
+      border: none
+      p
+        text-indent: -0.5em
+        @extend %type-18pt
+        @extend %line-height-24pt
+
+    .hero-quote-source
+      @extend %type-14pt
+      @extend %type-upcase
+      color: $color-off-grey
+      display: inline-block
+      border-top: 2px solid rgba($color-off-grey, 0.25)
+      text-decoration: none
+      padding-top: 5px
+      .icon
+        font-size: 0.75em
+      &:hover
+        color: $color-white
+        border-top-color: $color-white

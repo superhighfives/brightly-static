@@ -10,15 +10,18 @@
   text-transform: uppercase
 
 %type-body
-  @extend %type-regular
   font-family: $base-font-stack
   font-size: $base-font-size
   font-weight: 400
 
+%type-normal
+  font-family: $base-font-stack
+  font-weight: 400
+
 %type-heading
   font-family: $heading-font-stack
-  font-weight: 300
   text-transform: uppercase
+  font-weight: 300
 
 %type-fancy
   font-family: $fancy-font-stack

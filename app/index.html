@@ -101,93 +101,22 @@
 
   </section>
 
-  <div class="container blocks-wrapper">
-    <div class="row">
-      <div class="col-md-12">
-        <div class="blocks">
-          <div class="row">
-            <div class="block-wrapper col-md-3 col-sm-3">
-              <div class="block-title">
-                <h2 class="block-title-primary">Next gig</h2>
-                <a class="block-title-secondary" href="https://www.songkick.com/artists/4201936-brightly">View all gigs</a>
-              </div>
-
-              <div ng-latest-gig>
-                <a ng-href="{{ latest_gig.uri }}" class="block block-next-gig ng-cloak">
-                  <div class="block-heading">
-                    <h1 class="block-heading-title ng-cloak">{{ latest_gig.venue.name }}</h1>
-                  </div>
-                  <div class="block-details">
-                    <ul class="block-details-list">
-                      <li class="block-details-list-item">
-                        <div class="icon">&#x23F2;</div>
-                        <div class="block-details-list-item-primary ng-cloak">
-                          {{ latest_gig.datetime | date: 'ha, EEEE MMMM d' }}
-                        </div>
-                      </li>
-                      <li class="block-details-list-item">
-                        <div class="icon">&#xE6D0;</div>
-                        <div class="block-details-list-item-primary ng-cloak">
-                          {{ latest_gig.city.name }}
-                        </div>
-                      </li>
-                    </ul>
-                  </div>
-                </a>
-              </div>
-
-            </div>
-            <div class="block-wrapper col-md-3 col-sm-3">
-              <div class="block-title">
-                <h2 class="block-title-primary">The debut album</h2>
-              </div>
-              <a href="http://music.wearebrightly.com/album/beginnings-endings" class="block">
-                <img class="block-image" src="images/blocks/tile-beginnings-and-endings.jpg" alt="The debut album, Beginnings & Endings" />
-              </a>
-            </div>
-            <div class="block-wrapper col-md-3 col-sm-3">
-              <div class="block-title">
-                <h2 class="block-title-primary">The new EP</h2>
-              </div>
-              <a href="http://music.wearebrightly.com/album/the-greylings" class="block">
-                <img class="block-image" src="images/blocks/tile-the-greylings.jpg" alt="The new EP, The Greylings" />
-              </a>
-            </div>
-            <div class="block-wrapper col-md-3 col-sm-3">
-              <div class="block-title">
-                <h2 class="block-title-primary">Preflight Nerves</h2>
-              </div>
-              <a href="http://tweetflight.wearebrightly.com/" class="block block-preflight-nerves">
-                <img class="block-ribbon" src="images/blocks/tile-ribbon-fwa.png" alt="Winner, FWA site of the day award" />
-                <div class="table-display">
-                  <div class="social-icon">&#xF611;</div>
-                </div>
-                <h2 class="block-preflight-nerves-title">An award winning Twitter-powered music video</h2>
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="posts" ng-feeds>
+  <section class="upcoming">
     <div class="container">
-
-      <div class="posts-wrapper row">
-        <div class="post-wrapper col-md-4 col-sm-4" ng-repeat="item in feeds">
-          <div class="post post-{{ item.service }}">
-            <div class="post-content">
-              <div class="row">
-                <ng-include src="item.service"></ng-include>
-              </div>
-            </div>
+      <div class="row">
+        <div class="col-md-12">
+          <div class="upcoming-label">
+            <span class="waypoint">Next gig</span> powered by <a href="#">Songkick</a>
           </div>
+          <h1 class="upcoming-title">Bar Solo, Camden</h1>
         </div>
       </div>
-
     </div>
-  </div>
+  </section>
+
+  <section class="grid">
+    
+  </section>
 
   <script type="text/ng-template" id="twitter">
       <div class="col-md-12">
@@ -314,6 +243,7 @@
     <script src="scripts/directives/latest_gig.js"></script>
     <script src="scripts/directives/feeds.js"></script>
     <script src="scripts/directives/embed.js"></script>
+
   <!-- endbuild -->
 </body>
 </html>
