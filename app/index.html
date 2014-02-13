@@ -101,14 +101,25 @@
 
   </section>
 
-  <section class="upcoming">
+  <section class="upcoming ng-cloak" ng-latest-gig ng-show="latest_gig">
     <div class="container">
       <div class="row">
         <div class="col-md-12">
           <div class="upcoming-label">
-            <span class="waypoint">Next gig</span> powered by <a href="#">Songkick</a>
+            <span class="waypoint">Next gig</span> powered by <a href="http://songkick.com/artists/4201936-brightly">Songkick</a>
           </div>
-          <h1 class="upcoming-title">Bar Solo, Camden</h1>
+          <a class="upcoming-link" ng-href="{{ latest_gig.uri }}">
+            <h1 class="upcoming-title">
+              {{ latest_gig.venue.name }}
+              <span class="upcoming-location">{{ latest_gig.city.name }}</span>
+            </h1>
+            <div class="upcoming-date">
+              {{ latest_gig.date | amDateFormat:'h:mma, dddd MMMM Do'}}
+            </div>
+            <div ng-if="latest_gig.bands" class="upcoming-with">
+              <span class="upcoming-highlight">with</span> <span class="upcoming-bands">{{ (latest_gig.bands | map:'name').join(', ') }}</span>
+            </div>
+          </a>
         </div>
       </div>
     </div>
@@ -117,104 +128,6 @@
   <section class="grid">
     
   </section>
-
-  <script type="text/ng-template" id="twitter">
-      <div class="col-md-12">
-        <p class="twitter-text" ng-bind-html="item.text | unsafe"></p>
-        <ng-include src="'meta'"></ng-include>
-      </div>
-    </div>
-  </script>
-
-  <script type="text/ng-template" id="tumblr">
-    <div class="col-md-12">
-      <ng-include src="item.type"></ng-include>
-      <ng-include src="'tags'"></ng-include>
-      <ng-include src="'meta'"></ng-include>
-    </div>
-  </script>
-
-  <script type="text/ng-template" id="post-video">
-    <div class="flex-video" ng-bind-html="item.related.embed | unsafe"></div>
-    <div ng-bind-html="item.related.caption | unsafe"></div>
-  </script>
-
-  <script type="text/ng-template" id="post-audio">
-    <div ng-bind-html="item.related.embed | unsafe"></div>
-    <div ng-bind-html="item.related.caption | unsafe"></div>
-  </script>
-
-  <script type="text/ng-template" id="post-chat">
-    <p ng-bind-html="item.related.body | unsafe"></p>
-  </script>
-  <script type="text/ng-template" id="post-link">
-    
-    <h2 class="post-title">
-      <a ng-href='{{ item.related.url }}' class="tumblr-title">
-        {{ item.related.title }}
-      </a>
-    </h2>
-    <div ng-bind-html="item.related.description | unsafe"></div>
-  </script>
-  
-  <script type="text/ng-template" id="post-quote">
-    <blockquote class="post-quote">
-      <p ng-bind-html="item.related.text | unsafe"></p>
-      <p class="post-source">{{ item.related.source }}</p>
-    </blockquote>
-  </script>
-
-  <script type="text/ng-template" id="post-photo">
-    <div ng-repeat="photo in item.related.photos">
-      <a ng-href="{{ photo.url }}">
-        <img ng-src="{{ photo.url }}" />
-      </a>
-    </div>
-    <div ng-bind-html="item.related.caption | unsafe"></div>
-  </script>
-
-  <script type="text/ng-template" id="post-text">
-    <h2 class="post-title">{{ item.related.title }}</h2>
-    <div class="post-text" ng-bind-html="item.related.body | unsafe"></div>
-  </script>
-
-  <script type="text/ng-template" id="tags">
-    <div ng-repeat="tag in tags">
-      {{ tag }}
-    </div>
-  </script>
-
-  <script type="text/ng-template" id="soundcloud">
-    <div class="col-md-12">
-      <iframe class="soundcloud_audio_player" scrolling="no" frameborder="no" ng-embed="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/{{ item.id }}&amp;auto_play=false&amp;show_artwork=false" ng-src="{{ embed_url }}"></iframe>
-      <ng-include src="'meta'"></ng-include>
-    </div>
-  </script>
-
-  <script type="text/ng-template" id="instagram">
-    <div class="col-md-12">
-      <img ng-embed="{{ item.src }}" ng-src="{{ embed_url }}" />
-      <p>{{ item.caption }}</p>
-      <ng-include src="'meta'"></ng-include>
-    </div>
-  </script>
-
-  <script type="text/ng-template" id="meta">
-    <ul class="post-meta">
-      <li class="post-meta-item post-meta-service">
-        <div class="social-icon" ng-bind-html="item.icon | unsafe"></div>
-        <div class="post-meta-item-detail">{{ item.service }}</div>
-      </li>
-      <li class="post-meta-item post-meta-date">
-        <div class="icon">&#x23F2;</div>
-        <div class="post-meta-item-detail">
-          <a class="post-meta-permalink" ng-href="{{ item.uri }}">
-            <time am-time-ago="item.created_at">{{ item.created_at }}</time>
-          </a>
-        </div>
-      </li>
-    </ul>
-  </script>
 
   <!-- build:js scripts/vendor.js -->
   <!-- bower:js -->
@@ -239,11 +152,11 @@
   <!-- build:js(.tmp) scripts/main.js -->
     <script src="scripts/main.js"></script>
     <script src="scripts/filters/unsafe.js"></script>
+    <script src="scripts/filters/map.js"></script>
     <script src="scripts/directives/parallax.js"></script>
     <script src="scripts/directives/latest_gig.js"></script>
     <script src="scripts/directives/feeds.js"></script>
     <script src="scripts/directives/embed.js"></script>
-
   <!-- endbuild -->
 </body>
 </html>

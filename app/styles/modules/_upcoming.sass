@@ -6,7 +6,26 @@
     margin-bottom: 20px
     @extend %type-12pt
     @extend %type-fancy
-  .upcoming-title
+  .upcoming-title,
+  .upcoming-date,
+  .upcoming-with
     text-align: center
+  .upcoming-link
+    text-decoration: none
+    border-bottom: 1px solid $color-dark-yellow
+  .upcoming-title
     @extend %type-24pt
     @extend %type-heading
+    padding-bottom: 5px
+    .upcoming-location
+      color: $color-dark-yellow
+  .upcoming-highlight
+    @extend %type-fancy
+    @extend %type-14pt
+    color: $color-dark-yellow
+    background: darken($color-yellow, 3%)
+    padding: 0 3px
+  .upcoming-bands
+    color: $color-dark-yellow
+  .upcoming-no-results
+    
