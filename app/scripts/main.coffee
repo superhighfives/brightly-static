@@ -49,8 +49,14 @@ app.controller 'MainCtrl', [
         when "twitter" then "&#xF611;"
 
     $scope.latest_gig = []
-    $scope.latest_gig_endpoint = "http://localhost:5000/latest_gig.json?jsoncallback=JSON_CALLBACK"
+
+    base_url = if window.location.toString().match(/localhost/) and not window.location.toString().match(/\?live=1/)
+      "http://localhost:5000"
+    else
+      "http://brightly-server.herokuapp.com"
+
+    $scope.latest_gig_endpoint = "#{base_url}/latest_gig.json?jsoncallback=JSON_CALLBACK"
 
     $scope.feeds = []
-    $scope.feeds_endpoint = "http://localhost:5000/feeds.json?jsoncallback=JSON_CALLBACK"
+    $scope.feeds_endpoint = "#{base_url}/feeds.json?jsoncallback=JSON_CALLBACK"
 ]
