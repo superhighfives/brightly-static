@@ -139,6 +139,46 @@
     </div>
   </section>
 
+  <section class="footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="footer-contact">
+            <dl>
+              <dt>For high and low fives:</dt>
+                <dd><a href="mailto:together@wearebrightly.com" title="Email us">together@wearebrightly.com</a></dd>
+            </dl>
+            <dl>
+              <dt>For bookings:</dt>
+                <dd><a href="mailto:bookings@wearebrightly.com" title="Book us">bookings@wearebrightly.com</a></dd>
+            </dl>
+          </div>
+          <ul class="social-links">
+            <li class="social-links-item"><a target="_blank" class="icon" href="http://music.wearebrightly.com">&#x266B;</a></li>
+            <li class="social-links-item"><a target="_blank" class="social-icon" title="Follow us on Facebook" href="http://facebook.com/wearebrightly">&#xF610;</a></li>
+            <li class="social-links-item"><a target="_blank" class="social-icon" title="Follow us on Twitter" href="http://twitter.com/wearebrightly">&#xF611;</a></lit>
+            <li class="social-links-item"><a target="_blank" class="social-icon" title="Follow us on Tumblr" href="http://tumblr.wearebrightly.com">&#xF620;</a></li>
+            <li class="social-links-item"><a target="_blank" class="social-icon" title="Follow us on YouTube" href="http://youtube.com/wearebrightly">&#xF630;</a></li>
+            <li class="social-links-item"><a target="_blank" class="social-icon" title="Follow us on Flickr" href="http://flickr.com/wearebrightly">&#xF640;</a></li>
+            <li class="social-links-item"><a target="_blank" class="social-icon" title="Follow us on Instagram" href="http://instagram.com/wearebrightly">&#xF641;</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <div class="plugins">
+            <div class="twitter">
+              <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://wearebrightly.com" data-text="We Are Brightly, and so are you. Check out their new music: http://wearebrightly.com/" data-count="horizontal" data-via="wearebrightly">Tweet</a><script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
+            </div>
+            <div class="facebook">
+              <div id="fb-root"></div><script src="http://connect.facebook.net/en_US/all.js#xfbml=1"></script><fb:like href="http://facebook.com/wearebrightly" send="true" width="450" show_faces="false" action="like" colorscheme="dark" font="lucida grande"></fb:like>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <script type="text/ng-template" id="twitter">
     <span class="social-icon">&#xF611;</span>
     <div class="table-display">
@@ -146,6 +186,7 @@
         <p class="text" ng-bind-html="item.text | unsafe"></p>
         <a class="meta-permalink" ng-href="{{ item.uri }}">
           <time am-time-ago="item.created_at">{{ item.created_at }}</time>
+          <span class="icon">&#x1F517;</span>
         </a>
       </div>
     </div>
@@ -153,6 +194,18 @@
 
   <script type="text/ng-template" id="instagram">
     <div class="grid-item-hero" ng-style="{'background-image':'url({{ item.src }})'}">
+      <a class="overlay" ng-href="{{ item.uri }}">
+        <span class="social-icon">&#xF641;</span>
+        <div class="table-display">
+          <div class="cell-display cell-vertical-bottom">
+            <p class="text" ng-bind-html="item.caption | unsafe"></p>
+            <div class="meta-permalink">
+              <time am-time-ago="item.created_at">{{ item.created_at }}</time>
+              <span class="icon">&#x1F517;</span>
+            </div>
+          </div>
+        </div>
+      </a>
     </div>
   </script>
 

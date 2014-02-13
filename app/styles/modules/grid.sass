@@ -1,5 +1,8 @@
 .grid
   position: relative
+  border-bottom: 5px solid $color-body-grey
+  +clearfix
+
   .grid-item
     position: relative
     height: 200px
@@ -20,23 +23,43 @@
       padding: 20px
       &:hover
         background: $color-white
-      .social-icon
-        position: absolute
-        top: 10px
-        left: 10px
 
       .breakpoint-sm &,
       .breakpoint-md &
         width: 50%
       .breakpoint-lg &
         width: 33.333333334%
+    
+    .social-icon
+      position: absolute
+      top: 10px
+      left: 10px
 
     .grid-item-hero
+      transform: translate3d(0,0,0)
+      transition: background-size 0.3s
       width: 100%
       height: 100%
-      background-size: cover
+      background-size: 100% auto
       background-position: center
       background-repeat: no-repeat
+      .meta-permalink
+        color: $color-yellow
+      &:hover
+        background-size: 110% auto
+        .overlay
+          opacity: 1
+    
+    .overlay
+      transition: opacity 0.3s
+      opacity: 0
+      position: absolute
+      display: block
+      padding: 20px
+      width: 100%
+      height: 100%
+      background: rgba($color-black, 0.5)
+      color: $color-white
 
     .text
       @extend %type-18pt
@@ -46,3 +69,5 @@
       @extend %type-upcase
       @extend %type-12pt
       text-decoration: none
+      .icon
+        font-size: 0.75em
