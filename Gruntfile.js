@@ -159,6 +159,16 @@ module.exports = function (grunt) {
                 }
             }
         },
+        ngmin: {
+          dist: {
+            files: [{
+              expand: true,
+              cwd: '<%= yeoman.dist %>/scripts',
+              src: '*.js',
+              dest: '<%= yeoman.dist %>/scripts'
+            }]
+          }
+        },
         autoprefixer: {
             options: {
                 browsers: ['last 1 version']
@@ -357,6 +367,7 @@ module.exports = function (grunt) {
         'autoprefixer',
         'concat',
         'cssmin',
+        'ngmin',
         'uglify',
         'modernizr',
         'copy:dist',
