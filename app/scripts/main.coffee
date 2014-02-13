@@ -47,8 +47,6 @@ app.controller 'MainCtrl', [
       switch type
         when "instagram" then "&#xF641;"
         when "twitter" then "&#xF611;"
-        when "tumblr" then "&#xF620;"
-        when "soundcloud" then "&#xF6B3;"
 
     $scope.latest_gig = []
     $scope.latest_gig_endpoint = "http://localhost:5000/latest_gig.json?jsoncallback=JSON_CALLBACK"

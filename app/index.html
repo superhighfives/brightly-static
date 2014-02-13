@@ -134,32 +134,26 @@
   </section>
 
   <section class="grid" ng-feeds>
-    <div class="grid-sizer"></div>
-    <div ng-repeat="item in feeds" class="grid-item grid-item-{{item.service}}" ng-packery>
+    <div ng-repeat="item in feeds" class="grid-item grid-item-{{item.service}}">
       <ng-include src="item.service"></ng-include>
     </div>
   </section>
 
   <script type="text/ng-template" id="twitter">
     <span class="social-icon">&#xF611;</span>
-    <p class="text" ng-bind-html="item.text | unsafe"></p>
-    <a class="meta-permalink" ng-href="{{ item.uri }}">
-      <time am-time-ago="item.created_at">{{ item.created_at }}</time>
-    </a>
+    <div class="table-display">
+      <div class="cell-display cell-vertical-bottom">
+        <p class="text" ng-bind-html="item.text | unsafe"></p>
+        <a class="meta-permalink" ng-href="{{ item.uri }}">
+          <time am-time-ago="item.created_at">{{ item.created_at }}</time>
+        </a>
+      </div>
+    </div>
   </script>
 
   <script type="text/ng-template" id="instagram">
     <div class="grid-item-hero" ng-style="{'background-image':'url({{ item.src }})'}">
     </div>
-  </script>
-
-  <script type="text/ng-template" id="meta">
-    <ul class="post-meta">
-      <li class="post-meta-item post-meta-service">
-        <div class="social-icon" ng-bind-html="item.icon | unsafe"></div>
-        <div class="post-meta-item-detail">{{ item.service }}</div>
-      </li>
-    </ul>
   </script>
 
   <!-- build:js scripts/vendor.js -->
@@ -168,8 +162,6 @@
     <script src="bower_components/angular/angular.js"></script>
     <script src="bower_components/moment/moment.js"></script>
     <script src="bower_components/angular-moment/angular-moment.js"></script>
-    <script src="bower_components/imagesloaded-packaged/imagesloaded.pkgd.js"></script>
-    <script src="bower_components/packery/packery.js"></script>
   <!-- endbower -->
   <!-- endbuild -->
 
@@ -191,7 +183,6 @@
     <script src="scripts/directives/latest_gig.js"></script>
     <script src="scripts/directives/feeds.js"></script>
     <script src="scripts/directives/embed.js"></script>
-    <script src="scripts/directives/packery.js"></script>
   <!-- endbuild -->
 </body>
 </html>

@@ -3,6 +3,7 @@
   .grid-item
     position: relative
     height: 200px
+    float: left
     
     .breakpoint-xs &
       width: 100%
@@ -13,8 +14,16 @@
       width: 16.666666667%
     
     &.grid-item-twitter
+      min-height: 200px
+      transition: background 0.3s
       background: $color-off-white
       padding: 20px
+      &:hover
+        background: $color-white
+      .social-icon
+        position: absolute
+        top: 10px
+        left: 10px
 
       .breakpoint-sm &,
       .breakpoint-md &
