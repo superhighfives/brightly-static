@@ -4,9 +4,14 @@
 
   .footer-contact
     float: left
+    .breakpoint-xs &
+      float: none
     dl
       float: left
       margin: 0 20px 0 0
+      .breakpoint-xs &
+        float: none
+        margin-bottom: 20px
     dt
       @extend %type-fancy
       @extend %type-12pt
@@ -14,6 +19,18 @@
       color: $color-off-grey
     a
       color: $color-yellow
+    .breakpoint-xs &
+      dd
+        @extend %type-14pt
+
+  .breakpoint-xs &
+    .social-links
+      float: none
+      .social-links-item
+        margin-left: 0
+        margin-right: 10px
+    .plugins
+      display: none
 
   .plugins
     padding-top: 20px
