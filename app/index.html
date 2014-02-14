@@ -49,7 +49,7 @@
       })();
     </script>
   </head>
-  <body ng-app="BrightlyApp" ng-controller="MainCtrl">
+  <body ng-app="BrightlyApp" ng-controller="MainCtrl" ontouchstart="">
   <!--[if lt IE 10]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
   <![endif]-->
@@ -195,8 +195,8 @@
   </script>
 
   <script type="text/ng-template" id="instagram">
-    <div class="grid-item-hero" ng-style="{'background-image':'url({{ item.src }})'}">
-      <a class="overlay" ng-href="{{ item.uri }}">
+    <a ng-href="{{ item.uri }}" class="grid-item-hero" ng-style="{'background-image':'url({{ item.src }})'}">
+      <div class="overlay">
         <span class="social-icon">&#xF641;</span>
         <div class="table-display">
           <div class="cell-display cell-vertical-bottom">
@@ -207,8 +207,8 @@
             </div>
           </div>
         </div>
-      </a>
-    </div>
+      </div>
+    </a>
   </script>
 
   <!-- build:js scripts/vendor.js -->
