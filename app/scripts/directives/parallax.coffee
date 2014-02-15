@@ -1,6 +1,6 @@
 "use strict"
 
-angular.module('BrightlyApp').directive 'ngParallax', ($document, $window, onScrollChange) ->
+angular.module('BrightlyApp').directive 'ngParallax', ($document, $window, onScrollChange, isTouch) ->
   (scope, elem, attr) ->
 
     oldString = undefined
@@ -23,4 +23,6 @@ angular.module('BrightlyApp').directive 'ngParallax', ($document, $window, onScr
         elem.css "opacity", opacityCal scale
 
     setBackgroundPosition 0
-    onScrollChange.attach setBackgroundPosition
+
+    if !isTouch()
+      onScrollChange.attach setBackgroundPosition
