@@ -21,7 +21,6 @@
       height: 100%
 
     &.grid-item-twitter
-      min-height: 200px
       transition: background 0.3s
       background: $color-off-white
       padding: 20px
@@ -31,6 +30,9 @@
       &.is-activated
         background: $color-white
 
+      .breakpoint-xs &
+        height: auto
+        padding-top: 40px
       .breakpoint-sm &,
       .breakpoint-md &
         width: 50%
