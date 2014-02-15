@@ -10,7 +10,7 @@
     <meta name="description" content="Brightly are an indie/pop/folk/electronic band. They have a really big crush on you.">
     <meta name="viewport" content="width=device-width">
     <link rel="stylesheet" href="styles/e31725cf.bootstrap.css">
-    <link rel="stylesheet" href="styles/16bfd307.main.css">
+    <link rel="stylesheet" href="styles/4b5e7ccf.main.css">
     <script src="scripts/vendor/f7f27360.modernizr.js"></script>
 
     <!-- Facebook tags -->
@@ -176,12 +176,18 @@
   </section>
 
   <script type="text/ng-template" id="twitter">
-    <span class="social-icon">&#xF611;</span>
+    <div class="icons">
+      <span class="social-icon">&#xF611;</span>
+      <span class="icon subtle" ng-show="item.retweeted">&#xF600;</span>
+    </div>
     <div class="table-display">
       <div class="cell-display cell-vertical-bottom">
         <p class="text" ng-bind-html="item.text | unsafe"></p>
         <a class="meta-permalink" ng-href="{{ item.uri }}">
           <time am-time-ago="item.created_at">{{ item.created_at }}</time>
+          <span ng-show="item.retweeted">
+            <span class="subtle">from {{ item.screen_name }}</span>
+          </span>
           <span class="icon">&#x1F517;</span>
         </a>
       </div>
@@ -191,7 +197,9 @@
   <script type="text/ng-template" id="instagram">
     <a ng-href="{{ item.uri }}" class="grid-item-hero" ng-style="{'background-image':'url({{ item.src }})'}">
       <div class="overlay">
-        <span class="social-icon">&#xF641;</span>
+        <div class="icons">
+          <span class="social-icon">&#xF641;</span>
+        </div>
         <div class="table-display">
           <div class="cell-display cell-vertical-bottom">
             <p class="text" ng-bind-html="item.caption | unsafe"></p>
@@ -217,6 +225,6 @@
     ga('create','UA-25297036-1');ga('send','pageview');
   </script>
 
-  <script src="scripts/c8eff3bb.main.js"></script>
+  <script src="scripts/934c4a76.main.js"></script>
 </body>
 </html>
