@@ -163,9 +163,9 @@ module.exports = function (grunt) {
           dist: {
             files: [{
               expand: true,
-              cwd: '<%= yeoman.dist %>/scripts',
+              cwd: '.tmp/concat/scripts',
               src: '*.js',
-              dest: '<%= yeoman.dist %>/scripts'
+              dest: '.tmp/concat/scripts'
             }]
           }
         },
@@ -371,8 +371,8 @@ module.exports = function (grunt) {
         'autoprefixer',
         'concat',
         'cssmin',
-        'uglify',
         'ngmin',
+        'uglify',
         'modernizr',
         'copy:dist',
         'rev',
