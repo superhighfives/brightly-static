@@ -11,6 +11,9 @@ else
   app.value "viewportYOffset", ->
     document.documentElement.scrollTop
 
+app.value "isTouch", ->
+  Modernizr.touch
+
 app.value "viewportHeight", ->
   document.documentElement.clientHeight
 

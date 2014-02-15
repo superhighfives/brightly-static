@@ -136,7 +136,7 @@
   </section>
 
   <section class="grid" ng-feeds>
-    <div ng-repeat="item in feeds" class="grid-item grid-item-{{item.service}}">
+    <div ng-repeat="item in feeds" class="grid-item grid-item-{{item.service}}" ng-grid-item ng-class="status">
       <ng-include src="item.service"></ng-include>
     </div>
   </section>
@@ -181,27 +181,30 @@
     </div>
   </section>
 
+
   <script type="text/ng-template" id="twitter">
-    <div class="icons">
-      <span class="social-icon">&#xF611;</span>
-      <span class="icon subtle" ng-show="item.retweeted">&#xF600;</span>
-    </div>
-    <div class="table-display">
-      <div class="cell-display cell-vertical-bottom">
-        <p class="text" ng-bind-html="item.text | unsafe"></p>
-        <a class="meta-permalink" ng-href="{{ item.uri }}">
-          <time am-time-ago="item.created_at">{{ item.created_at }}</time>
-          <span ng-show="item.retweeted">
-            <span class="subtle">from {{ item.screen_name }}</span>
-          </span>
-          <span class="icon">&#x1F517;</span>
-        </a>
+    <div class="event-wrapper" ng-mouseenter="activate()" ng-mouseleave="deactivate()">
+      <div class="icons">
+        <span class="social-icon">&#xF611;</span>
+        <span class="icon subtle" ng-show="item.retweeted">&#xF600;</span>
+      </div>
+      <div class="table-display">
+        <div class="cell-display cell-vertical-bottom">
+          <p class="text" ng-bind-html="item.text | unsafe"></p>
+          <a class="meta-permalink" ng-href="{{ item.uri }}">
+            <time am-time-ago="item.created_at">{{ item.created_at }}</time>
+            <span ng-show="item.retweeted">
+              <span class="subtle">from {{ item.screen_name }}</span>
+            </span>
+            <span class="icon">&#x1F517;</span>
+          </a>
+        </div>
       </div>
     </div>
   </script>
 
   <script type="text/ng-template" id="instagram">
-    <a ng-href="{{ item.uri }}" class="grid-item-hero" ng-style="{'background-image':'url({{ item.src }})'}">
+    <a ng-href="{{ item.uri }}" class="grid-item-hero" ng-style="{'background-image':'url({{ item.src }})'}" ng-mouseenter="activate()" ng-mouseleave="deactivate()" ng-click="touch($event)">
       <div class="overlay">
         <div class="icons">
           <span class="social-icon">&#xF641;</span>
@@ -245,6 +248,7 @@
     <script src="scripts/directives/parallax.js"></script>
     <script src="scripts/directives/latest_gig.js"></script>
     <script src="scripts/directives/feeds.js"></script>
+    <script src="scripts/directives/grid_item.js"></script>
     <script src="scripts/directives/embed.js"></script>
   <!-- endbuild -->
 </body>

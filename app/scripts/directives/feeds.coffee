@@ -3,9 +3,11 @@
 angular.module('BrightlyApp').directive 'ngFeeds', ($http) ->
   (scope, elem, attr) ->
     $http.jsonp(scope.feeds_endpoint).success (data) ->
-      console.log data
       posts = data
       posts.map (post) ->
         icon = scope.getIcon(post.service)
         post.icon = icon
       scope.feeds = posts
+
+    scope.resetTouches = ->
+      scope.$broadcast 'deactivateAll'
