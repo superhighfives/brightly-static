@@ -9,9 +9,15 @@
     <title>Brightly - A London-based indie/pop/folk/electronic band</title>
     <meta name="description" content="Brightly are an indie/pop/folk/electronic band. They have a really big crush on you.">
     <meta name="viewport" content="width=device-width">
-    <link rel="stylesheet" href="styles/e31725cf.bootstrap.css">
-    <link rel="stylesheet" href="styles/4b5e7ccf.main.css">
-    <script src="scripts/vendor/f7f27360.modernizr.js"></script>
+    <!-- build:css styles/bootstrap.css -->
+      <link rel="stylesheet" href="bower_components/sass-bootstrap/dist/css/bootstrap.css">
+    <!-- endbuild -->
+    <!-- build:css(.tmp) styles/main.css -->
+      <link rel="stylesheet" href="styles/main.css">
+    <!-- endbuild -->
+    <!-- build:js scripts/vendor/modernizr.js -->
+      <script src="bower_components/modernizr/modernizr.js"></script>
+    <!-- endbuild -->
 
     <!-- Facebook tags -->
     <meta property="fb:admins" content="500678127">
@@ -71,7 +77,7 @@
 
   <section class="hero hero-greylings">
       
-    <img src="images/811dfa41.hero-greylings.jpg" class="background-image" ng-parallax="">
+    <img src="images/hero-greylings.jpg" class="background-image" ng-parallax="">
 
     <div class="hero-banner">
       <div class="table-display">
@@ -130,7 +136,7 @@
   </section>
 
   <section class="grid" ng-feeds="">
-    <div ng-repeat="item in feeds" class="grid-item grid-item-{{item.service}}">
+    <div ng-repeat="item in feeds" class="grid-item grid-item-{{item.service}}" ng-grid-item="" ng-class="status">
       <ng-include src="item.service"></ng-include>
     </div>
   </section>
@@ -175,27 +181,30 @@
     </div>
   </section>
 
+
   <script type="text/ng-template" id="twitter">
-    <div class="icons">
-      <span class="social-icon">&#xF611;</span>
-      <span class="icon subtle" ng-show="item.retweeted">&#xF600;</span>
-    </div>
-    <div class="table-display">
-      <div class="cell-display cell-vertical-bottom">
-        <p class="text" ng-bind-html="item.text | unsafe"></p>
-        <a class="meta-permalink" ng-href="{{ item.uri }}">
-          <time am-time-ago="item.created_at">{{ item.created_at }}</time>
-          <span ng-show="item.retweeted">
-            <span class="subtle">from {{ item.screen_name }}</span>
-          </span>
-          <span class="icon">&#x1F517;</span>
-        </a>
+    <div class="event-wrapper" ng-mouseenter="activate()" ng-mouseleave="deactivate()">
+      <div class="icons">
+        <span class="social-icon">&#xF611;</span>
+        <span class="icon subtle" ng-show="item.retweeted">&#xF600;</span>
+      </div>
+      <div class="table-display">
+        <div class="cell-display cell-vertical-bottom">
+          <p class="text" ng-bind-html="item.text | unsafe"></p>
+          <a class="meta-permalink" ng-href="{{ item.uri }}">
+            <time am-time-ago="item.created_at">{{ item.created_at }}</time>
+            <span ng-show="item.retweeted">
+              <span class="subtle">from {{ item.screen_name }}</span>
+            </span>
+            <span class="icon">&#x1F517;</span>
+          </a>
+        </div>
       </div>
     </div>
   </script>
 
   <script type="text/ng-template" id="instagram">
-    <a ng-href="{{ item.uri }}" class="grid-item-hero" ng-style="{'background-image':'url({{ item.src }})'}">
+    <a ng-href="{{ item.uri }}" class="grid-item-hero" ng-style="{'background-image':'url({{ item.src }})'}" ng-mouseenter="activate()" ng-mouseleave="deactivate()" ng-click="touch($event)">
       <div class="overlay">
         <div class="icons">
           <span class="social-icon">&#xF641;</span>
@@ -213,7 +222,14 @@
     </a>
   </script>
 
-  <script src="scripts/da003bd1.vendor.js"></script>
+  <!-- build:js scripts/vendor.js -->
+  <!-- bower:js -->
+    <script src="bower_components/metaquery/metaquery.js"></script>
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/moment/moment.js"></script>
+    <script src="bower_components/angular-moment/angular-moment.js"></script>
+  <!-- endbower -->
+  <!-- endbuild -->
 
   <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
   <script>
@@ -225,6 +241,15 @@
     ga('create','UA-25297036-1');ga('send','pageview');
   </script>
 
-  <script src="scripts/934c4a76.main.js"></script>
+  <!-- build:js(.tmp) scripts/main.js -->
+    <script src="scripts/main.js"></script>
+    <script src="scripts/filters/unsafe.js"></script>
+    <script src="scripts/filters/map.js"></script>
+    <script src="scripts/directives/parallax.js"></script>
+    <script src="scripts/directives/latest_gig.js"></script>
+    <script src="scripts/directives/feeds.js"></script>
+    <script src="scripts/directives/grid_item.js"></script>
+    <script src="scripts/directives/embed.js"></script>
+  <!-- endbuild -->
 </body>
 </html>
