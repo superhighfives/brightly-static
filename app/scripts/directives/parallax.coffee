@@ -6,7 +6,7 @@ angular.module('BrightlyApp').directive 'ngParallax', ($document, $window, onScr
     oldString = undefined
     yCalc = (scale) ->
       value = -(scale / 4)
-      if value > 0 then 0 else -(Math.min -value, 100)
+      if value > 0 then 0 else -(Math.min -value, 300)
 
     opacityCal = (scale) ->
       return Math.max 0.5, 1 - scale / 350
