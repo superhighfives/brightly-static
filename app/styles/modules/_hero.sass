@@ -20,7 +20,7 @@
 
   .breakpoint-xs &
     height: auto
-    padding: 100px 0
+    padding: 140px 0 100px
 
   .hero-title
     @extend %type-70pt
@@ -31,16 +31,20 @@
     .breakpoint-sm &
       @extend %type-60pt
     .breakpoint-xs &
-      @extend %type-36pt
+      @extend %type-44pt
       margin-bottom: 5px
 
   .hero-subtitle
     @extend %type-14pt
     color: $color-off-grey
     margin-bottom: 10px
+    .breakpoint-xs &
+      margin-bottom: 5px
 
   .hero-quote
     margin-top: 20px
+    .breakpoint-xs &
+      margin-top: 40px
 
     blockquote
       color: $color-white

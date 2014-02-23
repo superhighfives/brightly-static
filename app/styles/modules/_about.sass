@@ -9,9 +9,15 @@
 
   .overlay &
     box-shadow: 0 0 50px $color-black
-    right: 90%
+    cursor: pointer
+    .breakpoint-lg &
+      right: 75%
+    .breakpoint-md &
+      right: 75%
+    .breakpoint-sm &
+      right: 90%
     .breakpoint-xs &
-      right: 99%
+      right: 95%
 
 .about
   position: fixed
@@ -21,11 +27,22 @@
   left: 0
   z-index: 0
   color: $color-white
+  .about-wrapper
+    background: url(../images/hero-about.jpg) no-repeat
+    background-size: cover
   overflow-y: scroll
   -webkit-overflow-scrolling: touch
-  .background-image
-    position: fixed
   
+  .heading-title
+    color: $color-yellow
+    @extend %type-24pt
+    margin-bottom: 20px
+    .fancy
+      font-size: 0.75em
+
+  p a
+    color: $color-yellow
+
   .content
     transition: opacity 0.3s
     z-index: 10

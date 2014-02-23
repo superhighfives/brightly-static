@@ -4,10 +4,10 @@
   "dependencies": {
     "sass-bootstrap": "~3.0.0",
     "modernizr": "~2.6.2",
-    "matchmedia", "~0.1.0",
+    "matchmedia": "~0.1.0",
     "metaquery": "~1.1.1",
     "angular": "~1.2.3",
-    "angular-moment": "~0.5.2",
+    "angular-moment": "~0.5.2"
   },
   "devDependencies": {}
 }

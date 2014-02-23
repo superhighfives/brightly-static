@@ -5,10 +5,21 @@
   z-index: 50
 
   .heading-title
-    color: $color-white
-    @extend %type-24pt
+    @extend %type-14pt
+    color: $color-yellow
     margin-bottom: 10px
 
   .form-newsletter
     border-bottom: 1px solid rgba($color-white, 0.25)
     padding-bottom: 20px
+  
+    .email
+      background: none
+      border-radius: 0
+      color: $color-white
+
+    .breakpoint-xs &
+      .button
+        display: none
+      .form-group
+        margin-bottom: 0
