@@ -10,7 +10,7 @@
     <meta name="description" content="Brightly are an indie/pop/folk/electronic band. They have a really big crush on you.">
     <meta name="viewport" content="width=device-width">
     <link rel="stylesheet" href="styles/e31725cf.bootstrap.css"/>
-    <link rel="stylesheet" href="styles/0d02f9c0.main.css"/>
+    <link rel="stylesheet" href="styles/d945bc9d.main.css"/>
     <script src="scripts/vendor/f7f27360.modernizr.js"></script>
 
     <!-- Facebook tags -->
@@ -43,57 +43,53 @@
       })();
     </script>
   </head>
-  <body ng-app="BrightlyApp" ng-controller="MainCtrl">
+  <body ng-app="BrightlyApp" ng-controller="MainCtrl" ng-class="view ? 'overlay' : ''">
   <!--[if lt IE 10]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
   <![endif]-->
 
   <div class="header">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-12">
-          <h1 class="header-logo">
-            <a href="/">Brightly</a>
-          </h1>
-          <ul class="social-links">
-            <li class="social-links-item"><a target="_blank" class="icon" href="http://music.wearebrightly.com">&#x266B;</a></li>
-            <li class="social-links-item"><a target="_blank" class="social-icon" title="Follow us on Facebook" href="http://facebook.com/wearebrightly">&#xF610;</a></li>
-            <li class="social-links-item"><a target="_blank" class="social-icon" title="Follow us on Twitter" href="http://twitter.com/wearebrightly">&#xF611;</a></li>
-            <li class="social-links-item"><a target="_blank" class="social-icon" title="Follow us on Tumblr" href="http://tumblr.wearebrightly.com">&#xF620;</a></li>
-            <li class="social-links-item"><a target="_blank" class="social-icon" title="Follow us on YouTube" href="http://youtube.com/wearebrightly">&#xF630;</a></li>
-            <li class="social-links-item"><a target="_blank" class="social-icon" title="Follow us on Flickr" href="http://flickr.com/wearebrightly">&#xF640;</a></li>
-            <li class="social-links-item"><a target="_blank" class="social-icon" title="Follow us on Instagram" href="http://instagram.com/wearebrightly">&#xF641;</a></li>
-          </ul>
-        </div>
-      </div>
-    </div>
+    <h1 class="header-logo">
+      <a href="/">Brightly</a>
+    </h1>
+    <nav class="navigation ng-cloak">
+      <a class="navigation-item" href="" ng-click="view = !view">About</a>
+      <a class="navigation-item" ng-latest-gig="" target="_self" href="#gigs" ng-show="latest_gig">Gigs</a>
+      <a class="navigation-item" target="_self" href="#news">News</a>
+      <a class="navigation-item" target="_self" href="#contact">Contact</a>
+    </nav>
+    <ul class="social-links">
+      <li class="social-links-item"><a target="_blank" class="icon" href="http://music.wearebrightly.com">&#x266B;</a></li>
+      <li class="social-links-item"><a target="_blank" class="social-icon" title="Follow us on Facebook" href="http://facebook.com/wearebrightly">&#xF610;</a></li>
+      <li class="social-links-item"><a target="_blank" class="social-icon" title="Follow us on Twitter" href="http://twitter.com/wearebrightly">&#xF611;</a></li>
+      <li class="social-links-item"><a target="_blank" class="social-icon" title="Follow us on Tumblr" href="http://tumblr.wearebrightly.com">&#xF620;</a></li>
+      <li class="social-links-item"><a target="_blank" class="social-icon" title="Follow us on YouTube" href="http://youtube.com/wearebrightly">&#xF630;</a></li>
+      <li class="social-links-item"><a target="_blank" class="social-icon" title="Follow us on Flickr" href="http://flickr.com/wearebrightly">&#xF640;</a></li>
+      <li class="social-links-item"><a target="_blank" class="social-icon" title="Follow us on Instagram" href="http://instagram.com/wearebrightly">&#xF641;</a></li>
+    </ul>
   </div>
 
-  <section class="hero hero-greylings">
-      
-    <img src="images/811dfa41.hero-greylings.jpg" class="background-image" ng-parallax="">
+  <section class="about">
+    <div class="about-wrapper">
 
-    <div class="hero-banner">
       <div class="table-display">
         <div class="cell-display cell-vertical-center">
           <div class="container">
             <div class="row">
-              <div class="col-md-6 col-md-push-3 col-md-pull-3 col-sm-8 col-sm-push-2 col-sm-pull-2">
-                <h2 class="hero-subtitle">The New EP</h2>
-                <h1 class="hero-title">The Greylings</h1>
-                <div class="button-actions">
-                  <a href="http://music.wearebrightly.com/album/the-greylings" class="button">
-                    <span class="icon">&#x266B;</span>
-                    Get it now
-                  </a>
-                </div>
-                <div class="hero-quote">
-                  <blockquote>
-                    <p>“The result is a well-considered mix of clever chord changes and sensitive musicianship coupled with the genuine joy and excitement that Brightly have come to be known for.”</p>
-                  </blockquote>
-                  <a class="hero-quote-source" href="http://www.indieshuffle.com/brightly-world-war/">
-                    <span class="icon">&#x1F517;</span>
-                    Indieshuffle <span class="fancy">on</span> <span class="highlight">World War</span>
+              <div class="col-xs-push-1 col-xs-10 col-xs-pull-1 col-sm-push-3 col-sm-9 col-md-push-6 col-md-6">
+                <div class="content">
+                  <h1 class="heading-title">About <span class="fancy">(a brief history)</span></h1>
+                  <p>Brightly was formed by <strong>Charlie Gleason</strong>, a programmer and computer science dropout, in his bedroom. Threading together folk, electronica, and surreptitious recordings of children screaming in airplanes, he began to construct what would become the debut album <a href="http://music.wearebrightly.com/album/beginnings-endings">Beginnings & Endings.</a></p>
+
+                  <p>Armed with his rampant enthusiasm for the internets he built <a href="http://tweetflight.wearebrightly.com/">Tweetflight</a>, an interactive Twitter-powered music video for Preflight Nerves, which won a bunch of awards, got a half million views and was featured by <a href="http://www.thinkwithgoogle.com/campaigns/brightly-tweetflight.html">Google's Creative Sandbox</a>.</p>
+
+                  <p><strong>Nicholas Lam</strong>, guitarist, and <strong>Joshua Barber</strong>, drummer, joined in 2012 and everything was great. After touring relentlessly throughout 2013, they released <a href="http://music.wearebrightly.com/album/the-greylings">The Greylings EP</a>, a collection of stripped back and decidedly unelectronic tracks.</p>
+
+                  <p>And then Charlie relocated to London, England. Splitting their time between the two countries, they are hard at work on the follow up to Beginnings & Endings, building on their distinct sound while trading a hundred thousand samples by email.</p>
+
+                  <a href="" ng-click="view = ''" class="button">
+                    <span class="icon">&#x25C5;</span>
+                    Back
                   </a>
                 </div>
               </div>
@@ -101,80 +97,150 @@
           </div>
         </div>
       </div>
-    </div>
 
-  </section>
-
-  <section class="upcoming ng-cloak" ng-latest-gig="" ng-show="latest_gig">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-12">
-          <div class="upcoming-label">
-            <span class="waypoint">Next gig</span> powered by <a href="http://songkick.com/artists/4201936-brightly">Songkick</a>
-          </div>
-          <a class="upcoming-link" ng-href="{{ latest_gig.uri }}">
-            <h1 class="upcoming-title">
-              {{ latest_gig.venue.name }}
-              <span class="upcoming-location">{{ latest_gig.city.name }}</span>
-            </h1>
-            <div class="upcoming-date">
-              {{ latest_gig.date | amDateFormat:'h:mma, dddd MMMM Do'}}
-            </div>
-            <div ng-if="latest_gig.bands" class="upcoming-with">
-              <span class="upcoming-highlight">with</span> <span class="upcoming-bands">{{ (latest_gig.bands | map:'name').join(', ') }}</span>
-            </div>
-          </a>
-        </div>
-      </div>
     </div>
   </section>
 
-  <section class="grid" ng-feeds="">
-    <div ng-repeat="item in feeds" class="grid-item grid-item-{{item.service}}" ng-grid-item="" ng-class="status">
-      <ng-include src="item.service"></ng-include>
-    </div>
-  </section>
+  <div class="wrapper" ng-click="view = ''">
 
-  <section class="footer">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-12">
-          <div class="footer-contact">
-            <dl>
-              <dt>For high and low fives:</dt>
-                <dd><a href="mailto:together@wearebrightly.com" title="Email us">together@wearebrightly.com</a></dd>
-            </dl>
-            <dl>
-              <dt>For bookings:</dt>
-                <dd><a href="mailto:bookings@wearebrightly.com" title="Book us">bookings@wearebrightly.com</a></dd>
-            </dl>
-          </div>
-          <ul class="social-links">
-            <li class="social-links-item"><a target="_blank" class="icon" href="http://music.wearebrightly.com">&#x266B;</a></li>
-            <li class="social-links-item"><a target="_blank" class="social-icon" title="Follow us on Facebook" href="http://facebook.com/wearebrightly">&#xF610;</a></li>
-            <li class="social-links-item"><a target="_blank" class="social-icon" title="Follow us on Twitter" href="http://twitter.com/wearebrightly">&#xF611;</a></li>
-            <li class="social-links-item"><a target="_blank" class="social-icon" title="Follow us on Tumblr" href="http://tumblr.wearebrightly.com">&#xF620;</a></li>
-            <li class="social-links-item"><a target="_blank" class="social-icon" title="Follow us on YouTube" href="http://youtube.com/wearebrightly">&#xF630;</a></li>
-            <li class="social-links-item"><a target="_blank" class="social-icon" title="Follow us on Flickr" href="http://flickr.com/wearebrightly">&#xF640;</a></li>
-            <li class="social-links-item"><a target="_blank" class="social-icon" title="Follow us on Instagram" href="http://instagram.com/wearebrightly">&#xF641;</a></li>
-          </ul>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-md-12">
-          <div class="plugins">
-            <div class="twitter">
-              <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://wearebrightly.com" data-text="We Are Brightly, and so are you. Check out their new music: http://wearebrightly.com/" data-count="horizontal" data-via="wearebrightly">Tweet</a><script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
-            </div>
-            <div class="facebook">
-              <div id="fb-root"></div><script src="http://connect.facebook.net/en_US/all.js#xfbml=1"></script><fb:like href="http://facebook.com/wearebrightly" send="true" width="400" height="20" show_faces="false" action="like" colorscheme="dark" font="lucida grande"></fb:like>
+    <section class="hero hero-greylings">
+        
+      <img src="images/811dfa41.hero-greylings.jpg" class="background-image" ng-parallax="">
+
+      <div class="hero-banner">
+        <div class="table-display">
+          <div class="cell-display cell-vertical-center">
+            <div class="container">
+              <div class="row">
+                <div class="col-md-6 col-md-push-3 col-md-pull-3 col-sm-8 col-sm-push-2 col-sm-pull-2">
+                  <h2 class="hero-subtitle">The New EP</h2>
+                  <h1 class="hero-title">The Greylings</h1>
+                  <div class="button-actions">
+                    <a href="http://music.wearebrightly.com/album/the-greylings" class="button">
+                      <span class="icon">&#x266B;</span>
+                      Get it now
+                    </a>
+                  </div>
+                  <div class="hero-quote">
+                    <blockquote>
+                      <p>“The result is a well-considered mix of clever chord changes and sensitive musicianship coupled with the genuine joy and excitement that Brightly have come to be known for.”</p>
+                    </blockquote>
+                    <a class="hero-quote-source" href="http://www.indieshuffle.com/brightly-world-war/">
+                      <span class="icon">&#x1F517;</span>
+                      Indieshuffle <span class="fancy">on</span> <span class="highlight">World War</span>
+                    </a>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
-  </section>
+      
+      <section class="newsletter">
+        <div class="container">
+          <div class="row">
+            <div class="col-sm-push-3 col-sm-6 col-sm-pull-3">
+              <h1 class="heading-title">Join our newsletter</h1>
+              <form action="http://wearebrightly.us3.list-manage.com/subscribe/post?u=01f94d5ff35e593421a7da967&amp;id=7a8c4528bb" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate form-inline form-newsletter" target="_blank" role="form" novalidate="">
+                <div class="form-group">
+                  <label class="sr-only" for="mce-EMAIL">Email Address </label>
+                  <input type="email" value="" name="EMAIL" class="required email form-control" id="mce-EMAIL" placeholder="Enter email">
+                </div>
+                <button type="submit" name="subscribe" id="mc-embedded-subscribe" class="button">
+                  <span class="icon">&#x2709;</span>
+                  Subscribe
+                </button>
+                <div id="mce-responses">
+                  <div class="response" id="mce-error-response" style="display:none"></div>
+                  <div class="response" id="mce-success-response" style="display:none"></div>
+                </div>
+                <div style="position: absolute; left: -5000px"><input type="text" name="b_01f94d5ff35e593421a7da967_7a8c4528bb" value=""></div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
 
+      <div class="player">
+        <iframe style="border: 0; height: 120px" src="http://bandcamp.com/EmbeddedPlayer/album=1998319800/size=large/bgcol=333333/linkcol=f8cd0d/tracklist=false/artwork=small/transparent=true/" seamless=""><a href="http://music.wearebrightly.com/album/beginnings-endings">Beginnings &amp; Endings by Brightly</a></iframe>
+      </div>
+
+    </section>
+
+    <section class="upcoming ng-cloak" ng-latest-gig="" ng-show="latest_gig" id="gigs">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="upcoming-label">
+              <span class="waypoint">Next gig</span> powered by <a href="http://songkick.com/artists/4201936-brightly">Songkick</a>
+            </div>
+            <a class="upcoming-link" ng-href="{{ latest_gig.uri }}">
+              <h1 class="upcoming-title">
+                {{ latest_gig.venue.name }}
+                <span class="upcoming-location">{{ latest_gig.city.name }}</span>
+              </h1>
+              <div class="upcoming-date">
+                {{ latest_gig.date | amDateFormat:'h:mma, dddd MMMM Do'}}
+              </div>
+              <div ng-if="latest_gig.bands" class="upcoming-with">
+                <span class="upcoming-highlight">with</span> <span class="upcoming-bands">{{ (latest_gig.bands | map:'name').join(', ') }}</span>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="grid" ng-feeds="" id="news">
+      <div ng-repeat="item in feeds" class="grid-item grid-item-{{item.service}}" ng-grid-item="" ng-class="status">
+        <ng-include src="item.service"></ng-include>
+      </div>
+    </section>
+
+    <section class="footer" id="contact">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="footer-contact">
+              <dl>
+                <dt>For high and low fives:</dt>
+                  <dd><a href="mailto:together@wearebrightly.com" title="Email us">together@wearebrightly.com</a></dd>
+              </dl>
+              <dl>
+                <dt>For bookings:</dt>
+                  <dd><a href="mailto:bookings@wearebrightly.com" title="Book us">bookings@wearebrightly.com</a></dd>
+              </dl>
+            </div>
+            <ul class="social-links">
+              <li class="social-links-item"><a target="_blank" class="icon" href="http://music.wearebrightly.com">&#x266B;</a></li>
+              <li class="social-links-item"><a target="_blank" class="social-icon" title="Follow us on Facebook" href="http://facebook.com/wearebrightly">&#xF610;</a></li>
+              <li class="social-links-item"><a target="_blank" class="social-icon" title="Follow us on Twitter" href="http://twitter.com/wearebrightly">&#xF611;</a></li>
+              <li class="social-links-item"><a target="_blank" class="social-icon" title="Follow us on Tumblr" href="http://tumblr.wearebrightly.com">&#xF620;</a></li>
+              <li class="social-links-item"><a target="_blank" class="social-icon" title="Follow us on YouTube" href="http://youtube.com/wearebrightly">&#xF630;</a></li>
+              <li class="social-links-item"><a target="_blank" class="social-icon" title="Follow us on Flickr" href="http://flickr.com/wearebrightly">&#xF640;</a></li>
+              <li class="social-links-item"><a target="_blank" class="social-icon" title="Follow us on Instagram" href="http://instagram.com/wearebrightly">&#xF641;</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12">
+            <div class="plugins">
+              <div class="twitter">
+                <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://wearebrightly.com" data-text="We Are Brightly, and so are you. Check out their new music: http://wearebrightly.com/" data-count="horizontal" data-via="wearebrightly">Tweet</a><script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
+              </div>
+              <div class="facebook">
+                <div id="fb-root"></div><script src="http://connect.facebook.net/en_US/all.js#xfbml=1"></script><fb:like href="http://facebook.com/wearebrightly" send="true" width="400" height="20" show_faces="false" action="like" colorscheme="dark" font="lucida grande"></fb:like>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </div>
+
+  
 
   <script type="text/ng-template" id="twitter">
     <div class="event-wrapper" ng-mouseenter="activate()" ng-mouseleave="deactivate()">
@@ -228,6 +294,6 @@
     ga('create','UA-25297036-1');ga('send','pageview');
   </script>
 
-  <script src="scripts/e32388ae.main.js"></script>
+  <script src="scripts/63e4bb09.main.js"></script>
 </body>
 </html>
