@@ -19,6 +19,7 @@
       right: 95%
 
 .about
+  visibility: hidden
   position: fixed
   top: 0
   right: 0
@@ -26,11 +27,15 @@
   left: 0
   z-index: 0
   color: $color-white
+  overflow-y: scroll
+  -webkit-overflow-scrolling: touch
+  
   .about-wrapper
     background: url(../images/hero-about.jpg) no-repeat
     background-size: cover
-  overflow-y: scroll
-  -webkit-overflow-scrolling: touch
+
+  .overlay &
+    visibility: visible
   
   .heading-title
     color: $color-yellow
