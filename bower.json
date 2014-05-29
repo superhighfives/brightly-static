@@ -7,7 +7,8 @@
     "matchmedia": "~0.1.0",
     "metaquery": "~1.1.1",
     "angular": "~1.2.3",
-    "angular-moment": "~0.5.2"
+    "angular-moment": "~0.7",
+    "moment-timezone": "~0.0.6"
   },
   "devDependencies": {}
 }

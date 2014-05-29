@@ -2,6 +2,12 @@
 
 app = angular.module('BrightlyApp', ['angularMoment'])
 
+moment.tz.add
+  zones:
+    "Etc/UTC": ["0 - UTC"]
+  rules: {}
+  links: {}
+
 # Cross-browser scroll amount calc from https://developer.mozilla.org/en-US/docs/Web/API/window.scrollY
 if window.pageYOffset isnt `undefined`
   app.value "viewportYOffset", ->
