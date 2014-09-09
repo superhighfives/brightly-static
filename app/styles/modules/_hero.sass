@@ -2,13 +2,25 @@
   position: relative
   width: 100%
 
-  &.hero-greylings
+  &.hero-greylings,
+  &.hero-true
     background: $color-black
     overflow: hidden
     border-bottom: 4px solid #4e4e4e
 
     .breakpoint-xs &
       height: auto
+
+  &.hero-true
+    .hero-banner
+      height: 700px
+    .hero-title-true
+      img
+        width: 100%
+        height: auto
+        display: block
+        margin-bottom: 20px
+
 
 .background-image
   position: absolute
@@ -58,16 +70,25 @@
         @extend %type-18pt
         @extend %line-height-24pt
 
-    .hero-quote-source
-      @extend %type-14pt
-      @extend %type-upcase
-      color: $color-off-grey
-      display: inline-block
-      border-top: 2px solid rgba($color-off-grey, 0.25)
-      text-decoration: none
-      padding-top: 5px
-      .icon
-        font-size: 0.75em
-      &:hover
-        color: $color-white
-        border-top-color: $color-white
+  .hero-message
+    margin-top: 20px
+    .breakpoint-xs &
+      margin-top: 40px
+    p
+      color: $color-white
+      @extend %type-18pt
+      @extend %line-height-24pt
+  
+  .hero-source
+    @extend %type-14pt
+    @extend %type-upcase
+    color: $color-off-grey
+    display: inline-block
+    border-top: 2px solid rgba($color-off-grey, 0.25)
+    text-decoration: none
+    padding-top: 5px
+    .icon
+      font-size: 0.75em
+    &:hover
+      color: $color-white
+      border-top-color: $color-white
