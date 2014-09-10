@@ -59,7 +59,7 @@
       <a href="/">Brightly</a>
     </h1>
     <nav class="navigation ng-cloak">
-      <a class="navigation-item" href ng-click="view = !view">About</a>
+      <a class="navigation-item" href ng-click="toggle = !toggle">About</a>
       <a class="navigation-item" ng-latest-gig target="_self" href="#gigs" ng-show="latest_gig">Gigs</a>
       <a class="navigation-item" target="_self" href="#news">News</a>
       <a class="navigation-item" target="_self" href="#contact">Contact</a>
@@ -75,7 +75,7 @@
     </ul>
   </div>
 
-  <section class="about">
+  <section class="about" ng-class="toggle ? 'toggle' : ''">
     <div class="about-wrapper">
 
       <div class="table-display">
@@ -93,7 +93,7 @@
 
                   <p>And then Charlie relocated to London, England. Splitting their time between the two countries, they are hard at work on the follow up to Beginnings & Endings, building on their distinct sound while trading a hundred thousand samples by email.</p>
 
-                  <a href ng-click="view = ''" class="button">
+                  <a href ng-click="toggle = false" class="button">
                     <span class="icon">&#x25C5;</span>
                     Back
                   </a>

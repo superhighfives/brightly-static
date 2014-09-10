@@ -19,6 +19,8 @@
       right: 95%
 
 .about
+  transition: opacity 0.3s
+  opacity: 0
   display: none
   position: fixed
   top: 0
@@ -33,6 +35,9 @@
   .about-wrapper
     background: url(../images/hero-about.jpg) no-repeat
     background-size: cover
+
+  &.toggle
+    opacity: 1
 
   .overlay &
     display: block

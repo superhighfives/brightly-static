@@ -57,6 +57,15 @@ app.controller 'MainCtrl', [
         when "instagram" then "&#xF641;"
         when "twitter" then "&#xF611;"
 
+    $scope.$watch 'toggle', ->
+      if $scope.toggle
+        $scope.view = true
+      else
+        setTimeout ->
+          $scope.view = false
+          $scope.$apply()
+        , 300
+
     $scope.latest_gig = []
 
     base_url = if window.location.toString().match(/localhost/) and not window.location.toString().match(/\?live=1/)
